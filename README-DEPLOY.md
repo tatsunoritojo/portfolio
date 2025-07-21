@@ -18,7 +18,7 @@
 **特徴**: 無料枠あり、GitHubとの連携が簡単、自動デプロイ
 
 **手順**:
-1. GitHubリポジトリを作成し、コードをプッシュ
+1. GitHubリポジトリ `portfolio` を作成し、コードをプッシュ
 2. [Render](https://render.com) にアカウント作成
 3. "New Static Site" を選択
 4. GitHubリポジトリを連携

@@ -1,7 +1,7 @@
 {
-  "name": "ai-portfolio-site",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "AI-driven development portfolio website",
+  "description": "Professional developer portfolio website showcasing full-stack projects and skills",
   "main": "index.html",
   "scripts": {
     "start": "npx serve -s . -p 3000",
