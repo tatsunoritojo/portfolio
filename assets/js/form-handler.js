@@ -35,10 +35,7 @@ function handleFormSubmit(event) {
     const formData = {
         name: form.elements['name'].value.trim(),
         email: form.elements['email'].value.trim(),
-        company: form.elements['company'].value.trim(),
         projectType: form.elements['project-type'].value,
-        budget: form.elements['budget'].value,
-        timeline: form.elements['timeline'].value,
         message: form.elements['message'].value.trim()
     };
 
@@ -53,7 +50,7 @@ function handleFormSubmit(event) {
         form.reset();
         
         // Reset button
-        submitButton.textContent = '送信する';
+        submitButton.textContent = 'メッセージを送信';
         submitButton.disabled = false;
     }, 1000);
 }

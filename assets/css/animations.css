@@ -217,13 +217,13 @@
     animation: fadeIn 0.5s ease-out forwards;
 }
 
-.form-group:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
-.form-group:nth-child(2) { animation-delay: 0.2s; opacity: 0; }
-.form-group:nth-child(3) { animation-delay: 0.3s; opacity: 0; }
-.form-group:nth-child(4) { animation-delay: 0.4s; opacity: 0; }
-.form-group:nth-child(5) { animation-delay: 0.5s; opacity: 0; }
-.form-group:nth-child(6) { animation-delay: 0.6s; opacity: 0; }
-.form-group:nth-child(7) { animation-delay: 0.7s; opacity: 0; }
+.form-group:nth-child(1) { animation-delay: 0.1s; opacity: 1; }
+.form-group:nth-child(2) { animation-delay: 0.2s; opacity: 1; }
+.form-group:nth-child(3) { animation-delay: 0.3s; opacity: 1; }
+.form-group:nth-child(4) { animation-delay: 0.4s; opacity: 1; }
+.form-group:nth-child(5) { animation-delay: 0.5s; opacity: 1; }
+.form-group:nth-child(6) { animation-delay: 0.6s; opacity: 1; }
+.form-group:nth-child(7) { animation-delay: 0.7s; opacity: 1; }
 
 .form-group input:focus,
 .form-group select:focus,
@@ -425,3 +425,457 @@
 .glow:hover {
     box-shadow: 0 0 30px rgba(0, 212, 170, 0.8);
 }
+
+/* About Me Timeline Animations */
+@keyframes timelineSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes timelineSlideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes countUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes progressBar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* About Timeline Item Animations */
+.about-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease-out;
+}
+
+.about-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-year.animate {
+    animation: timelineSlideIn 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.about-content.animate {
+    animation: timelineSlideInRight 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.about-highlight.animate {
+    animation: scaleIn 0.6s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+/* Skills Section Animations */
+.skill-category {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease-out;
+}
+
+.skill-category.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.skill-item.animate {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Stagger skills animation */
+.skill-item:nth-child(1) { animation-delay: 0.1s; }
+.skill-item:nth-child(2) { animation-delay: 0.2s; }
+.skill-item:nth-child(3) { animation-delay: 0.3s; }
+.skill-item:nth-child(4) { animation-delay: 0.4s; }
+.skill-item:nth-child(5) { animation-delay: 0.5s; }
+.skill-item:nth-child(6) { animation-delay: 0.6s; }
+.skill-item:nth-child(7) { animation-delay: 0.7s; }
+.skill-item:nth-child(8) { animation-delay: 0.8s; }
+
+/* Projects Section Animations */
+.project-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.8s ease-out;
+}
+
+.project-card.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.project-card:nth-child(1) { transition-delay: 0.1s; }
+.project-card:nth-child(2) { transition-delay: 0.3s; }
+.project-card:nth-child(3) { transition-delay: 0.5s; }
+
+/* Feature Grid Animation */
+.features-grid .feature-item {
+    animation: scaleIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.features-grid .feature-item:nth-child(1) { animation-delay: 0.1s; }
+.features-grid .feature-item:nth-child(2) { animation-delay: 0.2s; }
+.features-grid .feature-item:nth-child(3) { animation-delay: 0.3s; }
+.features-grid .feature-item:nth-child(4) { animation-delay: 0.4s; }
+.features-grid .feature-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Process Steps Animation */
+.process-steps .process-item {
+    animation: slideIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.process-steps .process-item:nth-child(1) { animation-delay: 0.2s; }
+.process-steps .process-item:nth-child(2) { animation-delay: 0.4s; }
+.process-steps .process-item:nth-child(3) { animation-delay: 0.6s; }
+.process-steps .process-item:nth-child(4) { animation-delay: 0.8s; }
+
+/* Workflow Steps Animation */
+.workflow-steps .workflow-step {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.workflow-steps .workflow-step.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.workflow-steps .workflow-step:nth-child(1) { transition-delay: 0.1s; }
+.workflow-steps .workflow-step:nth-child(2) { transition-delay: 0.3s; }
+.workflow-steps .workflow-step:nth-child(3) { transition-delay: 0.5s; }
+.workflow-steps .workflow-step:nth-child(4) { transition-delay: 0.7s; }
+
+/* Contact Form Advanced Animation */
+.contact-form {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    transition: all 0.8s ease-out;
+}
+
+.contact-form.animate {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* Enhanced Button Animation */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Section Headers Animation */
+.section-header {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.6s ease-out;
+}
+
+.section-header.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Progress Bar for Skills */
+.skill-progress {
+    width: 100%;
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.skill-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--hover-color));
+    border-radius: 2px;
+    animation: progressBar 2s ease-out forwards;
+    width: 0%;
+}
+
+/* Advanced Parallax Effects */
+.parallax {
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+/* プロフィールセクションのパララックス */
+.profile-section.in-view {
+    animation: profileSectionReveal 1s ease-out;
+}
+
+.profile-section {
+    transition: background-position 0.1s ease-out;
+}
+
+/* スクロール進行インジケーター */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(45, 45, 45, 0.8);
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--hover-color));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* 要素の表示アニメーション */
+.reveal-animate {
+    animation: revealFromBottom 0.8s ease-out forwards;
+}
+
+@keyframes revealFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes profileSectionReveal {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* パララックス背景のスムーズな動き（coverサイズ対応） */
+@keyframes backgroundFlow {
+    0% {
+        background-position: center calc(50% + 50px);
+    }
+    50% {
+        background-position: center 50%;
+    }
+    100% {
+        background-position: center calc(50% - 50px);
+    }
+}
+
+.profile-section.flowing {
+    animation: backgroundFlow 20s ease-in-out infinite;
+}
+
+/* じんわり消える視差効果の調整 */
+.profile-section::before {
+    opacity: calc(var(--parallax-opacity, 0.6) * var(--background-fade, 1));
+    transform: translateY(calc(var(--parallax-progress, 0) * -20px));
+    transition: opacity 0.8s ease, transform 0.1s ease-out;
+}
+
+/* 背景全体のフェード効果 */
+.profile-section {
+    transition: background-position 0.1s ease-out;
+    position: relative;
+}
+
+.profile-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 26, calc(1 - var(--background-fade, 1)));
+    pointer-events: none;
+    z-index: 1;
+    transition: background 0.8s ease;
+}
+
+/* コンテンツのz-indexを確保 */
+.profile-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* スムーズなフェードアウト効果 */
+@keyframes gentleFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.profile-section.fade-out {
+    animation: gentleFadeOut 1.5s ease-out forwards;
+}
+
+/* Number Counter Animation */
+@keyframes numberCount {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.number-counter {
+    animation: numberCount 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Section Divider Animation */
+.section-divider {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+    margin: calc(var(--spacing-unit) * 3) 0;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: all 0.8s ease-out;
+}
+
+.section-divider.animate {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+/* Enhanced Hover Effects for Timeline */
+.about-item:hover .about-year {
+    background-color: var(--accent-primary);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.about-item:hover .about-highlight {
+    border-left-width: 6px;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+/* Profile Section Horizontal Entrance Animation */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Profile section entrance animations */
+.profile-section .section-header {
+    opacity: 0;
+    animation: slideInFromLeft 0.8s ease-out 0.2s forwards;
+}
+
+.profile-section .profile-text {
+    opacity: 0;
+    animation: slideInFromRight 0.8s ease-out 0.4s forwards;
+}
+
+.profile-section .strengths-grid .strength-item {
+    opacity: 0;
+    animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.profile-section .strengths-grid .strength-item:nth-child(1) { animation-delay: 0.6s; }
+.profile-section .strengths-grid .strength-item:nth-child(2) { animation-delay: 0.8s; }
+.profile-section .strengths-grid .strength-item:nth-child(3) { animation-delay: 1.0s; }
+.profile-section .strengths-grid .strength-item:nth-child(4) { animation-delay: 1.2s; }
+
+.profile-section .skill-category {
+    opacity: 0;
+    animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+.profile-section .skill-category:nth-child(1) { animation-delay: 1.4s; }
+.profile-section .skill-category:nth-child(2) { animation-delay: 1.6s; }
+.profile-section .skill-category:nth-child(3) { animation-delay: 1.8s; }
+
+.profile-section .workflow-steps .workflow-step {
+    opacity: 0;
+    animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.profile-section .workflow-steps .workflow-step:nth-child(1) { animation-delay: 2.0s; }
+.profile-section .workflow-steps .workflow-step:nth-child(2) { animation-delay: 2.2s; }
+.profile-section .workflow-steps .workflow-step:nth-child(3) { animation-delay: 2.4s; }
+.profile-section .workflow-steps .workflow-step:nth-child(4) { animation-delay: 2.6s; }

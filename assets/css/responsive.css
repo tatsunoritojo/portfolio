@@ -15,7 +15,7 @@
 
 /* Desktop (1024px+) */
 @media (max-width: 1024px) {
-    .contact-wrapper {
+    .contact-content {
         grid-template-columns: 1fr;
         gap: calc(var(--spacing-unit) * 2);
     }
@@ -36,6 +36,7 @@
         gap: var(--spacing-unit);
         text-align: center;
     }
+    
     
     .main-nav ul {
         flex-wrap: wrap;
@@ -73,14 +74,19 @@
         gap: calc(var(--spacing-unit) * 0.5);
     }
     
-    /* Contact Form Adjustments */
-    .contact-form {
-        padding: calc(var(--spacing-unit) * 1.5);
+    /* About Me Timeline Responsive */
+    .about-item {
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 1);
     }
     
-    .contact-info {
-        padding: calc(var(--spacing-unit) * 1.5);
+    .about-year {
+        text-align: left;
+        justify-self: start;
+        width: auto;
+        display: inline-block;
     }
+    
     
     .social-link {
         padding: calc(var(--spacing-unit) * 0.6);
@@ -92,6 +98,11 @@
     .container {
         width: 95%;
         padding: var(--spacing-unit) 0;
+    }
+    
+    /* プロフィール背景をモバイルで固定解除 */
+    .profile-section {
+        background-attachment: scroll;
     }
     
     .main-header .container,
@@ -143,16 +154,7 @@
         padding: calc(var(--spacing-unit) * 1.5);
     }
     
-    .contact-form,
-    .contact-info {
-        padding: var(--spacing-unit);
-    }
     
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        padding: calc(var(--spacing-unit) * 0.6);
-    }
     
     .tech-tags {
         gap: calc(var(--spacing-unit) * 0.3);
@@ -202,10 +204,6 @@
         gap: calc(var(--spacing-unit) * 0.3);
     }
     
-    .contact-form,
-    .contact-info {
-        padding: calc(var(--spacing-unit) * 0.8);
-    }
     
     .strength-item,
     .workflow-step {

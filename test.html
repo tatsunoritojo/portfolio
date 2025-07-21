@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .skill-item { 
+            display: inline-block; 
+            background: #333; 
+            color: white; 
+            padding: 5px 10px; 
+            margin: 5px; 
+            border-radius: 3px; 
+        }
+        .project-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Test Page</h1>
+    
+    <h2>Skills Test</h2>
+    <div id="skills">
+        <h3>プログラミング言語</h3>
+        <ul id="skills-lang"></ul>
+        <h3>フレームワーク・ライブラリ</h3>
+        <ul id="skills-fw"></ul>
+        <h3>クラウド・ツール・AI</h3>
+        <ul id="skills-tools"></ul>
+    </div>
+    
+    <h2>Projects Test</h2>
+    <div id="projects-container"></div>
+    
+    <h2>Contact Form Test</h2>
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="Name" required><br><br>
+        <input type="email" name="email" placeholder="Email" required><br><br>
+        <textarea name="message" placeholder="Message" required></textarea><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

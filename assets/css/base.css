@@ -35,7 +35,7 @@ img {
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
     padding: calc(var(--spacing-unit) * 2) 0;

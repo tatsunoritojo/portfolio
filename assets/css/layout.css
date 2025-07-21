@@ -57,3 +57,126 @@
     margin: 0 var(--spacing-unit);
     font-size: 1.5rem;
 }
+
+/* セクション間の視覚的区切り */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    padding: calc(var(--spacing-unit) * 6) 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.profile-section {
+    background: linear-gradient(
+        rgba(26, 26, 26, 0.6), 
+        rgba(26, 26, 26, 0.4)
+    ), url('../images/sections/profile-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: calc(var(--spacing-unit) * 6) 0;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    z-index: 1;
+    background-attachment: scroll;
+}
+
+.profile-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 26, 0.6) 0%,
+        rgba(26, 26, 26, 0.4) 30%,
+        rgba(26, 26, 26, 0.2) 50%,
+        rgba(26, 26, 26, 0.4) 70%,
+        rgba(26, 26, 26, 0.6) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.profile-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.projects-section {
+    background: linear-gradient(
+        rgba(26, 26, 26, 0.7), 
+        rgba(26, 26, 26, 0.5)
+    ), url('../images/backgrounds/1753107830014.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding: calc(var(--spacing-unit) * 5) 0;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    z-index: 1;
+}
+
+.contact-section {
+    background-color: var(--secondary-bg);
+    padding: calc(var(--spacing-unit) * 2) 0;
+    border-top: 1px solid var(--border-color);
+}
+
+/* About Me タイムライン専用スタイル */
+.about-timeline {
+    margin: calc(var(--spacing-unit) * 2) 0;
+}
+
+.about-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: calc(var(--spacing-unit) * 2);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    padding-bottom: calc(var(--spacing-unit) * 2);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.about-year {
+    font-weight: 700;
+    color: var(--accent-primary);
+    padding: calc(var(--spacing-unit) * 0.5);
+    background-color: var(--primary-bg);
+    border-radius: 8px;
+    text-align: center;
+    align-self: start;
+}
+
+.about-content h4 {
+    color: var(--text-primary);
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+    font-size: 1.1rem;
+    background-color: rgba(128, 128, 128, 0.3);
+    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+    border-radius: 6px;
+    backdrop-filter: blur(5px);
+}
+
+.about-highlight {
+    background-color: rgba(128, 128, 128, 0.25);
+    padding: calc(var(--spacing-unit) * 1);
+    border-radius: 8px;
+    margin-top: calc(var(--spacing-unit) * 1);
+    border-left: 4px solid var(--accent-primary);
+    backdrop-filter: blur(5px);
+}
+
+.about-mission {
+    background-color: rgba(128, 128, 128, 0.25);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: 12px;
+    margin-top: calc(var(--spacing-unit) * 3);
+    border: 2px solid var(--accent-primary);
+    backdrop-filter: blur(5px);
+}
