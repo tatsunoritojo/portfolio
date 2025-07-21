@@ -55,6 +55,10 @@ function loadSkillsData() {
         const fwList = document.getElementById('skills-fw');
         const toolsList = document.getElementById('skills-tools');
 
+        // 言語判定（パスから判断）
+        const isEnglish = window.location.pathname.includes('/en/');
+        const descKey = isEnglish ? 'description_en' : 'description_ja';
+
         console.log('Elements found:', {langList, fwList, toolsList});
         if (langList && fwList && toolsList) {
             console.log('Adding skills to DOM...');
@@ -68,6 +72,7 @@ function loadSkillsData() {
                 const li = document.createElement('li');
                 li.className = 'skill-item';
                 li.textContent = skill.name;
+                li.setAttribute('data-description', skill[descKey]);
                 li.style.animationDelay = `${index * 0.1}s`;
                 langList.appendChild(li);
             });
@@ -75,6 +80,7 @@ function loadSkillsData() {
                 const li = document.createElement('li');
                 li.className = 'skill-item';
                 li.textContent = skill.name;
+                li.setAttribute('data-description', skill[descKey]);
                 li.style.animationDelay = `${index * 0.1}s`;
                 fwList.appendChild(li);
             });
@@ -82,10 +88,11 @@ function loadSkillsData() {
                 const li = document.createElement('li');
                 li.className = 'skill-item';
                 li.textContent = skill.name;
+                li.setAttribute('data-description', skill[descKey]);
                 li.style.animationDelay = `${index * 0.1}s`;
                 toolsList.appendChild(li);
             });
-            console.log('Skills added successfully');
+            console.log('Skills added successfully with tooltips');
         } else {
             console.error('Skill elements not found in DOM');
         }
