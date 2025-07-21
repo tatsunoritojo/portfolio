@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AI-Driven Development Portfolio</title>
+    <meta name="description" content="Contact me for AI-driven development projects.">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <!-- SEO -->
+    <meta property="og:title" content="Contact - AI-Driven Development Portfolio">
+    <meta property="og:description" content="Contact me for AI-driven development projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/en/contact.html">
+    <meta name="twitter:card" content="summary">
+
+</head>
+<body class="main-layout">
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">MyPortfolio</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switch">
+                <span>EN</span> | <a href="../contact.html">JA</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section id="contact-intro">
+                <h2>Contact</h2>
+                <p class="contact-intro-text">Are you considering web application or AI integration system development? Feel free to contact me. I'll propose the optimal solution to solve your challenges.</p>
+            </section>
+
+            <div class="contact-wrapper">
+                <section id="contact-form-section">
+                    <h3>Contact Form</h3>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="project-type">Project Type</label>
+                            <select id="project-type" name="project-type">
+                                <option value="">Please select</option>
+                                <option value="web-app">Web Application Development</option>
+                                <option value="ai-integration">AI Integration System</option>
+                                <option value="automation">Business Process Automation</option>
+                                <option value="consulting">Technical Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" name="budget">
+                                <option value="">Please select</option>
+                                <option value="under-50">Under $5,000</option>
+                                <option value="50-100">$5,000 - $10,000</option>
+                                <option value="100-300">$10,000 - $30,000</option>
+                                <option value="300-500">$30,000 - $50,000</option>
+                                <option value="over-500">Over $50,000</option>
+                                <option value="discuss">Open to discussion</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Preferred Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Please select</option>
+                                <option value="urgent">Within 1 month</option>
+                                <option value="short">2-3 months</option>
+                                <option value="medium">3-6 months</option>
+                                <option value="long">6+ months</option>
+                                <option value="flexible">Flexible</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Please describe your project details, challenges, and requirements."></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Send Message</button>
+                    </form>
+                </section>
+
+                <aside class="contact-info">
+                    <h3>Direct Contact</h3>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h4>Email</h4>
+                            <p><a href="mailto:contact@example.com">contact@example.com</a></p>
+                        </div>
+                        <div class="contact-method">
+                            <h4>Response Time</h4>
+                            <p>I typically respond within 24 hours.<br>Please mention if urgent.</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Social & Profiles</h4>
+                        <div class="social-list">
+                            <a href="https://github.com/tatsunoritojo" target="_blank" class="social-link">
+                                <span class="social-icon">GitHub</span>
+                                <span class="social-text">Projects & Code</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link">
+                                <span class="social-icon">LinkedIn</span>
+                                <span class="social-text">Professional Information</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link">
+                                <span class="social-icon">Twitter</span>
+                                <span class="social-text">Tech Updates</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="response-info">
+                        <h4>Development Capabilities</h4>
+                        <ul>
+                            <li>React, Vue.js SPA Development</li>
+                            <li>Node.js, Python API Development</li>
+                            <li>Database Design & Implementation</li>
+                            <li>AWS, GCP Infrastructure Setup</li>
+                            <li>AI API Integration & Utilization</li>
+                            <li>Legacy System Improvement</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 MyPortfolio. All Rights Reserved.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/tatsunoritojo" target="_blank" title="GitHub">GH</a>
+                <a href="#" target="_blank" title="LinkedIn">LI</a>
+                <a href="#" target="_blank" title="Twitter">TW</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/form-handler.js"></script>
+</body>
+</html>
