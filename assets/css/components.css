@@ -1110,6 +1110,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: relative;
+    cursor: pointer;
 }
 
 .interest-tag:hover {
@@ -1117,6 +1119,222 @@
     color: var(--primary-bg);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 212, 170, 0.3);
+}
+
+/* ツールチップ機能 */
+.interest-tag.has-article::after {
+    content: "記事があります 📖";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary-bg);
+    color: var(--text-primary);
+    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 0.8);
+    border-radius: 8px;
+    font-size: var(--font-size-small);
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    margin-bottom: 8px;
+}
+
+.interest-tag.has-article::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--secondary-bg);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1001;
+    margin-bottom: 2px;
+}
+
+.interest-tag.has-article:hover::after,
+.interest-tag.has-article:hover::before {
+    opacity: 1;
+}
+
+/* 英語版用ツールチップ */
+.interest-tag.has-article.en::after {
+    content: "Article available 📖";
+}
+
+/* 記事ページスタイル */
+.article-section {
+    padding: calc(var(--spacing-unit) * 4) 0;
+    min-height: 80vh;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--accent-primary);
+    text-decoration: none;
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    font-size: var(--font-size-small);
+    transition: color var(--transition-speed) ease;
+}
+
+.back-link:hover {
+    color: var(--hover-color);
+}
+
+.article-title {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
+    font-weight: 700;
+}
+
+.article-subtitle {
+    font-size: var(--font-size-large);
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.article-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.article-intro {
+    background: var(--secondary-bg);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: 12px;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    border-left: 4px solid var(--accent-primary);
+}
+
+.article-intro p {
+    font-size: var(--font-size-large);
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 500;
+}
+
+.content-section {
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.content-section h2 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-primary);
+    padding-bottom: calc(var(--spacing-unit) * 0.5);
+}
+
+.content-section p {
+    color: var(--text-secondary);
+    margin-bottom: calc(var(--spacing-unit) * 1);
+}
+
+.content-section blockquote {
+    background: var(--accent-primary);
+    color: var(--primary-bg);
+    padding: calc(var(--spacing-unit) * 1.5);
+    border-radius: 8px;
+    margin: calc(var(--spacing-unit) * 2) 0;
+    font-style: italic;
+    position: relative;
+}
+
+.content-section blockquote::before {
+    content: '"';
+    font-size: 3rem;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    opacity: 0.5;
+}
+
+.game-list {
+    display: grid;
+    gap: calc(var(--spacing-unit) * 2);
+    margin-top: calc(var(--spacing-unit) * 2);
+}
+
+.game-item {
+    background: var(--secondary-bg);
+    padding: calc(var(--spacing-unit) * 1.5);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.game-item h3 {
+    color: var(--accent-primary);
+    margin-bottom: calc(var(--spacing-unit) * 1);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.article-list {
+    list-style: none;
+    padding: 0;
+}
+
+.article-list li {
+    margin-bottom: calc(var(--spacing-unit) * 1);
+    padding-left: calc(var(--spacing-unit) * 1.5);
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.article-list li::before {
+    content: '→';
+    color: var(--accent-primary);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.article-list li strong {
+    color: var(--text-primary);
+}
+
+.article-cta {
+    background: var(--secondary-bg);
+    padding: calc(var(--spacing-unit) * 2);
+    border-radius: 12px;
+    text-align: center;
+    margin-top: calc(var(--spacing-unit) * 4);
+    border: 2px solid var(--accent-primary);
+}
+
+.article-cta p {
+    color: var(--text-primary);
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    font-weight: 500;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .article-title {
+        font-size: 2rem;
+    }
+    
+    .article-content {
+        padding: 0 calc(var(--spacing-unit) * 1);
+    }
+    
+    .game-list {
+        gap: calc(var(--spacing-unit) * 1);
+    }
 }
 
 /* モバイル対応 */
