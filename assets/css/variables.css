@@ -1,0 +1,29 @@
+
+:root {
+  /* Color Palette */
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --accent-primary: #00d4aa;
+  --accent-secondary: #0066cc;
+  --hover-color: #00b894;
+  --border-color: #404040;
+
+  /* Typography */
+  --font-primary: 'Noto Sans JP', 'Roboto', sans-serif;
+  --font-heading: 'Noto Sans JP', 'Roboto', sans-serif;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --spacing-unit: 1rem;
+  --header-height: 60px;
+
+  /* Animation */
+  --transition-speed: 300ms;
+}

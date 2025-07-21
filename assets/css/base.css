@@ -1,0 +1,50 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    font-size: var(--font-size-body);
+}
+
+a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: var(--spacing-unit);
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: calc(var(--spacing-unit) * 2) 0;
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.accent-text {
+    color: var(--accent-primary);
+}

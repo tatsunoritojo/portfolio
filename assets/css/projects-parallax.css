@@ -1,0 +1,66 @@
+/* Projects section parallax effects */
+
+/* プロジェクトセクションのパララックス */
+.projects-section.in-view {
+    animation: profileSectionReveal 1s ease-out;
+}
+
+.projects-section {
+    transition: background-position 0.1s ease-out !important;
+    position: relative;
+    overflow: hidden !important;
+    min-height: 100vh !important;
+    background: linear-gradient(
+        rgba(26, 26, 26, 0.6), 
+        rgba(26, 26, 26, 0.4)
+    ), url('../images/backgrounds/1753107830014.jpg') !important;
+}
+
+/* じんわり消える視差効果の調整（プロジェクトセクション用） */
+.projects-section::before {
+    opacity: calc(var(--parallax-opacity, 0.6) * var(--background-fade, 1));
+    transform: translateY(calc(var(--parallax-progress, 0) * -20px));
+    transition: opacity 0.8s ease, transform 0.1s ease-out;
+}
+
+/* 背景全体のフェード効果（プロジェクトセクション用） */
+.projects-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 26, calc(1 - var(--background-fade, 1)));
+    pointer-events: none;
+    z-index: 1;
+    transition: background 0.8s ease;
+}
+
+/* コンテンツのz-indexを確保（プロジェクトセクション用） */
+.projects-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* スムーズなフェードアウト効果（プロジェクトセクション用） */
+.projects-section.fade-out {
+    animation: gentleFadeOut 1.5s ease-out forwards;
+}
+
+/* パララックス背景のスムーズな動き（coverサイズ対応、プロジェクト用） */
+@keyframes projectsBackgroundFlow {
+    0% {
+        background-position: center calc(50% + 50px);
+    }
+    50% {
+        background-position: center 50%;
+    }
+    100% {
+        background-position: center calc(50% - 50px);
+    }
+}
+
+.projects-section.flowing {
+    animation: projectsBackgroundFlow 20s ease-in-out infinite;
+}

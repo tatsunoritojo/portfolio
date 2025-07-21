@@ -1,0 +1,23 @@
+
+{
+  "languages": [
+    { "name": "Python", "icon": "assets/images/icons/tech/python.svg" },
+    { "name": "TypeScript", "icon": "assets/images/icons/tech/typescript.svg" },
+    { "name": "JavaScript", "icon": "assets/images/icons/tech/javascript.svg" },
+    { "name": "HTML5", "icon": "" },
+    { "name": "CSS3", "icon": "" }
+  ],
+  "frameworks": [
+    { "name": "React", "icon": "assets/images/icons/tech/react.svg" },
+    { "name": "Flask", "icon": "" },
+    { "name": "Bootstrap 5", "icon": "" },
+    { "name": "SQLAlchemy", "icon": "" }
+  ],
+  "tools": [
+    { "name": "Git", "icon": "" },
+    { "name": "REST API", "icon": "" },
+    { "name": "PowerPoint API", "icon": "" },
+    { "name": "ChatGPT", "icon": "assets/images/icons/tech/ai.svg" },
+    { "name": "Claude", "icon": "assets/images/icons/tech/ai.svg" }
+  ]
+}
