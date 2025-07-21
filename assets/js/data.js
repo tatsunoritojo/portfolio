@@ -2,24 +2,94 @@
 const portfolioData = {
     skills: {
         languages: [
-            { name: "Python", icon: "assets/images/icons/tech/python.svg" },
-            { name: "TypeScript", icon: "assets/images/icons/tech/typescript.svg" },
-            { name: "JavaScript", icon: "assets/images/icons/tech/javascript.svg" },
-            { name: "HTML5", icon: "" },
-            { name: "CSS3", icon: "" }
+            { 
+                name: "Python", 
+                icon: "assets/images/icons/tech/python.svg",
+                description_ja: "汎用プログラミング言語。AI・機械学習、Web開発、データ分析など幅広い分野で使用されています。",
+                description_en: "General-purpose programming language. Widely used in AI/ML, web development, data analysis, and automation."
+            },
+            { 
+                name: "TypeScript", 
+                icon: "assets/images/icons/tech/typescript.svg",
+                description_ja: "JavaScriptに静的型チェック機能を追加した言語。大規模開発でバグを減らし、保守性を向上させます。",
+                description_en: "JavaScript with static type checking. Reduces bugs and improves maintainability in large-scale development."
+            },
+            { 
+                name: "JavaScript", 
+                icon: "assets/images/icons/tech/javascript.svg",
+                description_ja: "Webブラウザ上で動作するプログラミング言語。インタラクティブなWebページ、SPA、Node.jsでのサーバー開発などで使用。",
+                description_en: "Programming language that runs in web browsers. Used for interactive web pages, SPAs, and server development with Node.js."
+            },
+            { 
+                name: "HTML5", 
+                icon: "",
+                description_ja: "Webページの構造を定義するマークアップ言語。ビデオ、音声、キャンバスなどのマルチメディア機能をサポート。",
+                description_en: "Markup language for defining web page structure. Supports multimedia features like video, audio, and canvas."
+            },
+            { 
+                name: "CSS3", 
+                icon: "",
+                description_ja: "Webページのスタイルを定義するスタイルシート言語。アニメーション、レスポンシブデザイン、グリッドレイアウトなどを実現。",
+                description_en: "Style sheet language for defining web page appearance. Enables animations, responsive design, and grid layouts."
+            }
         ],
         frameworks: [
-            { name: "React", icon: "assets/images/icons/tech/react.svg" },
-            { name: "Flask", icon: "" },
-            { name: "Bootstrap 5", icon: "" },
-            { name: "SQLAlchemy", icon: "" }
+            { 
+                name: "React", 
+                icon: "assets/images/icons/tech/react.svg",
+                description_ja: "Facebook開発のJavaScriptライブラリ。コンポーネントベースのUI構築で、1ページアプリケーション（SPA）の開発に幅広く使用。",
+                description_en: "JavaScript library developed by Facebook. Widely used for building single-page applications (SPAs) with component-based UI architecture."
+            },
+            { 
+                name: "Flask", 
+                icon: "",
+                description_ja: "Python用の軽量Webフレームワーク。シンプルな構造で学習しやすく、小規模から中規模のWebアプリケーション開発に適しています。",
+                description_en: "Lightweight web framework for Python. Easy to learn with simple structure, suitable for small to medium-scale web applications."
+            },
+            { 
+                name: "Bootstrap 5", 
+                icon: "",
+                description_ja: "人気のCSSフレームワーク。事前に用意されたコンポーネントで美しいレスポンシブサイトを簡単に作成できます。",
+                description_en: "Popular CSS framework. Easily create beautiful responsive websites using pre-built components and utilities."
+            },
+            { 
+                name: "SQLAlchemy", 
+                icon: "",
+                description_ja: "Python用のORM（Object-Relational Mapping）ライブラリ。SQLデータベースをPythonオブジェクトで操作でき、複雑なクエリを簡潔に記述。",
+                description_en: "ORM (Object-Relational Mapping) library for Python. Allows manipulation of SQL databases as Python objects with concise complex queries."
+            }
         ],
         tools: [
-            { name: "Git", icon: "" },
-            { name: "REST API", icon: "" },
-            { name: "PowerPoint API", icon: "" },
-            { name: "ChatGPT", icon: "assets/images/icons/tech/ai.svg" },
-            { name: "Claude", icon: "assets/images/icons/tech/ai.svg" }
+            { 
+                name: "Git", 
+                icon: "",
+                description_ja: "分散型バージョン管理システム。ソースコードの変更履歴を記録・管理し、チーム開発でのコラボレーションをサポート。",
+                description_en: "Distributed version control system. Records and manages source code change history, supporting team collaboration."
+            },
+            { 
+                name: "REST API", 
+                icon: "",
+                description_ja: "Webサービスのアーキテクチャ設計スタイル。HTTPメソッド（GET、POST等）を使ってクライアントとサーバー間でデータをやり取り。",
+                description_en: "Architectural style for web service design. Exchanges data between client and server using HTTP methods (GET, POST, etc.)."
+            },
+            { 
+                name: "PowerPoint API", 
+                icon: "",
+                description_ja: "Microsoft PowerPointをプログラムから操作するAPI。スライドの自動作成、データの動的挿入、レポートの自動生成などが可能。",
+                description_en: "API for programmatically controlling Microsoft PowerPoint. Enables automatic slide creation, dynamic data insertion, and report generation."
+            },
+            { 
+                name: "ChatGPT", 
+                icon: "assets/images/icons/tech/ai.svg",
+                description_ja: "OpenAI開発の対話型AIモデル。コード生成、デバッグ支援、技術的な質問への回答など、開発業務を幅広くサポート。",
+                description_en: "Conversational AI model by OpenAI. Supports various development tasks including code generation, debugging assistance, and technical Q&A."
+            },
+            { 
+                name: "Claude", 
+                icon: "assets/images/icons/tech/ai.svg",
+                description_ja: "Anthropic開発のAIアシスタント。長文の理解、複雑な推論、コード解析などに優れ、精度の高い回答を提供。",
+                description_en: "AI assistant by Anthropic. Excels at long-form understanding, complex reasoning, and code analysis, providing highly accurate responses."
+            }
         ]
     },
     
