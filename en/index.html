@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="../assets/css/components.css">
     <link rel="stylesheet" href="../assets/css/animations.css">
     <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/about-readability.css">
+    <link rel="stylesheet" href="../assets/css/project-fix.css">
+    <link rel="stylesheet" href="../assets/css/video-background.css">
+    <link rel="stylesheet" href="../assets/css/projects-parallax.css">
 
     <!-- SEO -->
     <meta property="og:title" content="AI-Driven Development - Portfolio">
@@ -34,10 +38,10 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#hero" class="active">Home</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="lang-switch">
@@ -47,11 +51,299 @@
     </header>
 
     <main class="main-content">
-        <section id="hero" class="hero-section">
+        <section id="hero" class="hero-section profile-intro-bg">
+            <!-- Background slideshow -->
+            <div class="background-slideshow">
+                <div class="slide active" data-bg="../assets/images/backgrounds/1753104401527.jpg"></div>
+                <div class="slide" data-bg="../assets/images/backgrounds/1753104488695.jpg"></div>
+                <div class="slide" data-bg="../assets/images/backgrounds/1753104584298.jpg"></div>
+                <div class="slide" data-bg="../assets/images/backgrounds/1753104737689.jpg"></div>
+            </div>
+            
             <div class="container">
-                <h1 class="hero-title">Full-Stack Engineer<br>Achieving Overwhelming Speed<br>with AI-Driven Coding</h1>
-                <p class="hero-subtitle">Developed a 6300-line system in 2 months</p>
-                <a href="contact.html" class="btn">Contact Me</a>
+                <div class="profile-intro-content">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-image-placeholder">
+                            <!-- Profile photo goes here -->
+                            <img src="../assets/images/profile/profile-photo.jpg.jpg" alt="Profile photo" class="profile-photo">
+                        </div>
+                        <div class="profile-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Freelancer</span>
+                        </div>
+                    </div>
+                    <div class="profile-intro-text">
+                        <h1 class="profile-name">Tatsunori Tojo</h1>
+                        <p class="profile-title">AI-Driven Development Engineer</p>
+                        <div class="profile-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-icon">🎓</span>
+                                <span class="highlight-text">Master's in Educational Psychology</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">💻</span>
+                                <span class="highlight-text">Full-Stack Development</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">🚀</span>
+                                <span class="highlight-text">Rapid Prototyping</span>
+                            </div>
+                        </div>
+                        <div class="profile-personal-info">
+                            <div class="personal-section">
+                                <h3>Hobbies & Interests</h3>
+                                <div class="interest-tags">
+                                    <span class="interest-tag">🎮 Gaming</span>
+                                    <span class="interest-tag">🚴‍♂️ Road Cycling</span>
+                                    <span class="interest-tag">♿ Wheelchair Softball</span>
+                                    <span class="interest-tag">🏅 Special Olympics</span>
+                                    <span class="interest-tag">🏀 FID Basketball Coaching</span>
+                                    <span class="interest-tag">📺 Anime</span>
+                                    <span class="interest-tag">🎬 Movies</span>
+                                    <span class="interest-tag">⛳ Golf</span>
+                                    <span class="interest-tag">🚗 Driving</span>
+                                    <span class="interest-tag">🌄 Nature Scenery</span>
+                                    <span class="interest-tag">🍜 Ramen</span>
+                                    <span class="interest-tag">📚 Reading</span>
+                                </div>
+                            </div>
+                            <div class="personal-section">
+                                <h3>Additional Information</h3>
+                                <div class="additional-info">
+                                    <p class="info-text">I apply my experience in special needs education to create user-friendly system designs that are accessible to everyone.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="profile-cta-btn">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile" class="profile-section">
+            <div class="container">
+                <h2 class="section-header">Profile</h2>
+                <div class="profile-content">
+                    <div class="profile-text">
+                        <p>I am a full-stack engineer specializing in AI-driven development. Using the latest AI technologies, particularly ChatGPT and Claude, I implement "vibe coding" to achieve overwhelming development speed and quality compared to traditional methods.</p>
+                        <p>I am passionate about optimizing the entire development process from complex requirement definition to implementation and testing, maximizing business value for clients.</p>
+                    </div>
+                </div>
+
+                <div id="strengths">
+                    <h3>Strengths & Services</h3>
+                    <div class="strengths-grid">
+                        <div class="strength-item">
+                            <h4>Rapid Prototyping</h4>
+                            <p>With AI assistance, I realize working prototypes from ideas at overwhelming speed.</p>
+                        </div>
+                        <div class="strength-item">
+                            <h4>Full-Stack Development</h4>
+                            <p>From frontend to backend and infrastructure, I drive projects with consistent development framework.</p>
+                        </div>
+                        <div class="strength-item">
+                            <h4>Business Efficiency Systems</h4>
+                            <p>I analyze existing workflows and build systems that dramatically improve efficiency through automation.</p>
+                        </div>
+                        <div class="strength-item">
+                            <h4>AI Integration Solutions</h4>
+                            <p>I develop next-generation web applications leveraging AI APIs like ChatGPT and Claude.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="skills">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <ul class="skill-list" id="skills-lang"></ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Frameworks & Libraries</h4>
+                        <ul class="skill-list" id="skills-fw"></ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Cloud & Tools & AI</h4>
+                        <ul class="skill-list" id="skills-tools"></ul>
+                    </div>
+                </div>
+
+                <div id="about-me">
+                    <h3>About Me</h3>
+                    <div class="about-timeline">
+                        <div class="about-item">
+                            <div class="about-year">1997</div>
+                            <div class="about-content">
+                                <h4>Born in Tondabayashi, Osaka</h4>
+                                <p>Spent childhood loving games and hating studies, causing trouble for my mother.</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2013</div>
+                            <div class="about-content">
+                                <h4>Enrolled in Osaka Prefectural Kanan High School</h4>
+                                <p>Still disliking studies, entered a school below my first choice.</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2015</div>
+                            <div class="about-content">
+                                <h4>Made a resolution in third year of high school</h4>
+                                <p>Grades had dropped to 220/360. Despite telling teachers about my dream university (one that top students aim for), I was dismissed.</p>
+                                <div class="about-highlight">
+                                    <strong>Turning Point:</strong> After one year of intense studying, achieved a 47% to 83% improvement on the Center Test.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2016</div>
+                            <div class="about-content">
+                                <h4>Entered Hiroshima University, Faculty of Education, Elementary Education Course</h4>
+                                <p>My efforts paid off, and I entered my dream education faculty.</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2016 - 2020</div>
+                            <div class="about-content">
+                                <h4>Elementary Teacher Training Program</h4>
+                                <p>While studying to become an elementary school teacher, I became fascinated with psychology. I came to believe that broad knowledge beyond education is essential for nurturing people.</p>
+                                <div class="about-highlight">
+                                    <strong>Expanding Interests:</strong> Developed strong interest in the fusion of education and psychology.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2020 - 2022</div>
+                            <div class="about-content">
+                                <h4>Hiroshima University Graduate School, Educational Science Major</h4>
+                                <p>Conducted research on learning in developmental disabilities (autism spectrum). Deepened expertise in special needs education.</p>
+                                <div class="about-highlight">
+                                    <strong>Research Theme:</strong> Learning characteristics and effective support methods for children with developmental disabilities
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2022 - 2025</div>
+                            <div class="about-content">
+                                <h4>IVY Co., Ltd. - Free School Staff & Child Support Worker</h4>
+                                <p>Provided learning support and psychological-emotional support to children with developmental disabilities, school refusal, and mild intellectual disabilities.</p>
+                                <div class="about-highlight">
+                                    <strong>Started Programming:</strong> Feeling overwhelmed by massive administrative work, I began self-studying programming to improve work efficiency.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">April 2025 - Present</div>
+                            <div class="about-content">
+                                <h4>Hiroshima University Special Education Specialized Program</h4>
+                                <p>Working toward special education teacher certification, conducting research on basketball coaching methods for people with intellectual disabilities.</p>
+                                <div class="about-highlight">
+                                    <strong>Current Project:</strong> Assisting in establishing a cram school for children in the gray zone. Achieving efficient development in short periods using AI.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-mission">
+                        <h4>Mission</h4>
+                        <p>From a childhood of disliking studies to carving out a path through effort. I aim to solve real problems in education by combining problem-finding skills cultivated in special needs education with AI-driven development solutions.</p>
+                    </div>
+                </div>
+
+                <div id="ai-workflow">
+                    <h3>AI-Powered Development Workflow</h3>
+                    <div class="workflow-steps">
+                        <div class="workflow-step">
+                            <div class="step-number">1</div>
+                            <h4>Requirements Analysis</h4>
+                            <p>Use AI to analyze client challenges in detail and propose optimal solutions</p>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">2</div>
+                            <h4>Design & Architecture</h4>
+                            <p>Efficiently implement system design focusing on scalability and maintainability with AI assistance</p>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">3</div>
+                            <h4>High-Speed Implementation</h4>
+                            <p>Generate high-quality code 3-5x faster than conventional methods using vibe coding</p>
+                        </div>
+                        <div class="workflow-step">
+                            <div class="step-number">4</div>
+                            <h4>Testing & Deployment</h4>
+                            <p>Ensure reliable releases with automated testing environments and CI/CD pipelines</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-header">Projects</h2>
+                <div class="project-grid" id="projects-container">
+                    <!-- Projects will be dynamically loaded by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="contact-video-background">
+                <video autoplay muted loop playsinline preload="auto">
+                    <source src="../assets/images/backgrounds/VID_20250721_232707.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="container">
+                <h2 class="section-header">Contact</h2>
+                <p class="contact-intro">Please feel free to contact me for project requests or consultations.</p>
+                
+                <div class="contact-content">
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select id="project-type" name="project-type">
+                                    <option value="">Select Project Type</option>
+                                    <option value="web-app">Web Application Development</option>
+                                    <option value="automation">Business Efficiency System</option>
+                                    <option value="ai-integration">AI Integration Solution</option>
+                                    <option value="consulting">Technical Consulting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="6" placeholder="Please tell me your message" required></textarea>
+                            </div>
+                            <button type="submit" class="contact-btn">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-item">
+                                <div class="contact-icon">✉</div>
+                                <div class="contact-details">
+                                    <h4>Direct Contact</h4>
+                                    <a href="mailto:tatsunoritojo@gmail.com" class="contact-email">tatsunoritojo@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">⚡</div>
+                                <div class="contact-details">
+                                    <h4>GitHub</h4>
+                                    <a href="https://github.com/tatsunoritojo" target="_blank" class="contact-link">Projects and Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -67,7 +359,12 @@
         </div>
     </footer>
 
+    <script src="../assets/js/data.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/form-handler.js"></script>
+    <script src="../assets/js/slideshow.js"></script>
+    <script src="../assets/js/parallax.js"></script>
+    <script src="../assets/js/video-handler.js"></script>
 </body>
 </html>
