@@ -1121,52 +1121,86 @@
     box-shadow: 0 4px 12px rgba(0, 212, 170, 0.3);
 }
 
-/* ツールチップ機能 */
+/* おしゃれなツールチップ機能 */
+.interest-tag.has-article {
+    position: relative;
+    overflow: visible;
+}
+
+/* メインのツールチップバブル */
 .interest-tag.has-article::after {
-    content: "記事があります 📖";
+    content: "！";
     position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--secondary-bg);
-    color: var(--text-primary);
-    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 0.8);
-    border-radius: 8px;
-    font-size: var(--font-size-small);
+    top: -10px;
+    right: -10px;
+    transform: scale(0) rotate(45deg);
+    background: linear-gradient(135deg, #00d4aa, #00b894);
+    color: white;
+    padding: calc(var(--spacing-unit) * 0.6) calc(var(--spacing-unit) * 0.8);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    font-weight: 700;
     white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4), 0 0 0 3px rgba(255, 255, 255, 0.1);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 1000;
-    margin-bottom: 8px;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 9999;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.interest-tag.has-article::before {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 6px solid transparent;
-    border-top-color: var(--secondary-bg);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 1001;
-    margin-bottom: 2px;
+/* 矢印は使用しない - シンプルなデザインに統一 */
+
+/* 感嘆符アニメーション用の擬似要素（JavaScriptで制御） */
+.interest-tag.has-article {
+    /* animation: pulse-article 2s infinite; - JavaScriptで制御 */
 }
 
-.interest-tag.has-article:hover::after,
-.interest-tag.has-article:hover::before {
+@keyframes pulse-article {
+    0%, 70%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 212, 170, 0.3);
+    }
+    35% {
+        box-shadow: 0 4px 20px rgba(0, 212, 170, 0.6), 0 0 0 4px rgba(0, 212, 170, 0.2);
+    }
+}
+
+/* ホバー時の表示アニメーション */
+.interest-tag.has-article:hover::after {
     opacity: 1;
+    transform: scale(1) rotate(45deg);
+    animation: bounce-in 0.6s ease;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0) rotate(35deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(50deg);
+    }
+    100% {
+        transform: scale(1) rotate(45deg);
+    }
 }
 
 /* 英語版用ツールチップ */
 .interest-tag.has-article.en::after {
-    content: "Article available 📖";
+    content: "!";
 }
+
+/* ホバー時にパルスアニメーションを停止 */
+.interest-tag.has-article:hover {
+    animation: none;
+    box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* 旧スタイルを削除 - すべてのタグでゲーム式ツールチップに統一 */
 
 /* 記事ページスタイル */
 .article-section {

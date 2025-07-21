@@ -7,6 +7,47 @@ body {
     font-family: var(--font-primary);
     line-height: 1.6;
     font-size: var(--font-size-body);
+    min-height: 100vh;
+}
+
+/* ブラウザバック時の背景色問題を修正 */
+html {
+    background-color: var(--primary-bg);
+}
+
+/* ページ復元時のアニメーション状態をクリア */
+.page-restored * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+.page-restored {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+}
+
+/* 強制的な背景リセット（ブラウザバック問題対策） */
+body.force-reset {
+    background: var(--primary-bg) !important;
+    background-color: var(--primary-bg) !important;
+}
+
+body.force-reset * {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+    background: initial !important;
+}
+
+/* スライドショー要素のリセット */
+.background-slideshow.reset .slide {
+    opacity: 0 !important;
+}
+
+.background-slideshow.reset .slide.active {
+    opacity: 1 !important;
 }
 
 a {
