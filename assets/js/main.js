@@ -93,6 +93,30 @@ function loadSkillsData() {
                 toolsList.appendChild(li);
             });
             console.log('Skills added successfully with tooltips');
+            
+            // シンプルなホバー反応をテスト
+            console.log('Adding simple hover effects...');
+            const allSkillItems = document.querySelectorAll('.skill-item');
+            console.log('Found skill items:', allSkillItems.length);
+            
+            allSkillItems.forEach((item, index) => {
+                console.log(`Setting up hover for item ${index}:`, item.textContent);
+                
+                item.addEventListener('mouseenter', function() {
+                    console.log('Mouse entered:', this.textContent);
+                    this.style.backgroundColor = 'rgba(0, 212, 170, 0.2)';
+                    this.style.transform = 'translateY(-3px) scale(1.02)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    console.log('Mouse left:', this.textContent);
+                    this.style.backgroundColor = '';
+                    this.style.transform = '';
+                });
+            });
+            
+            // ツールチップ機能を初期化
+            initSkillTooltips();
         } else {
             console.error('Skill elements not found in DOM');
         }
@@ -441,6 +465,108 @@ function animateCounter(element) {
             number.textContent = Math.floor(current);
         }, 16);
     });
+}
+
+function initSkillTooltips() {
+    console.log('Initializing SIMPLE skill tooltips...');
+    
+    // 既存のツールチップがあれば削除
+    const existingTooltip = document.querySelector('.skill-tooltip');
+    if (existingTooltip) {
+        existingTooltip.remove();
+    }
+    
+    // シンプルなツールチップ要素を作成
+    const tooltip = document.createElement('div');
+    tooltip.className = 'skill-tooltip';
+    tooltip.style.cssText = `
+        position: fixed;
+        background: linear-gradient(135deg, #1a1a1a, #2d2d2d) !important;
+        color: #fff !important;
+        padding: 14px 18px !important;
+        border-radius: 12px !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        max-width: 280px !important;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.3), 0 0 0 1px rgba(0, 212, 170, 0.4) !important;
+        border: none !important;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 99999 !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        line-height: 1.5 !important;
+        word-wrap: break-word !important;
+        transform: translateY(-5px) scale(0.95);
+    `;
+    
+    // 吹き出し用の矢印要素を作成
+    const arrow = document.createElement('div');
+    arrow.className = 'tooltip-arrow';
+    arrow.style.cssText = `
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-right-color: #1a1a1a;
+        left: -16px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99999;
+    `;
+    tooltip.appendChild(arrow);
+    document.body.appendChild(tooltip);
+    console.log('Tooltip element created');
+    
+    // 少し待ってからスキルアイテムを取得
+    setTimeout(() => {
+        const skillItems = document.querySelectorAll('.skill-item');
+        console.log('Looking for skill items with descriptions:', skillItems.length);
+        
+        skillItems.forEach((item, index) => {
+            const description = item.getAttribute('data-description');
+            console.log(`Item ${index} (${item.textContent}):`, description ? 'HAS description' : 'NO description');
+            
+            if (description) {
+                item.addEventListener('mouseenter', function(e) {
+                    console.log('TOOLTIP: Mouse entered', this.textContent);
+                    console.log('Description:', description);
+                    
+                    tooltip.textContent = description;
+                    tooltip.style.opacity = '1';
+                    tooltip.style.display = 'block';
+                    tooltip.style.transform = 'translateY(0) scale(1)';
+                    
+                    // ボタンの位置を取得してその右上に固定表示
+                    const rect = this.getBoundingClientRect();
+                    const x = rect.right + 10; // ボタンの右端から10px右
+                    const y = rect.top - 10;   // ボタンの上端から10px上
+                    
+                    // 画面端のチェック
+                    const tooltipWidth = 300; // max-width
+                    const finalX = (x + tooltipWidth > window.innerWidth) 
+                        ? rect.left - tooltipWidth - 10 // 左側に表示
+                        : x;
+                    const finalY = (y < 0) 
+                        ? rect.bottom + 10 // 下側に表示
+                        : y;
+                    
+                    tooltip.style.left = finalX + 'px';
+                    tooltip.style.top = finalY + 'px';
+                    
+                    console.log(`TOOLTIP positioned at: ${finalX}, ${finalY} (button: ${rect.left}-${rect.right}, ${rect.top}-${rect.bottom})`);
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    console.log('TOOLTIP: Mouse left', this.textContent);
+                    tooltip.style.opacity = '0';
+                    tooltip.style.transform = 'translateY(-5px) scale(0.95)';
+                    setTimeout(() => {
+                        tooltip.style.display = 'none';
+                    }, 300);
+                });
+            }
+        });
+    }, 100);
 }
 
 function initContactForm() {
