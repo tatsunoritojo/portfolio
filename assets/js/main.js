@@ -468,7 +468,7 @@ function animateCounter(element) {
 }
 
 function initSkillTooltips() {
-    console.log('Initializing SIMPLE skill tooltips...');
+    console.log('Initializing stable skill tooltips...');
     
     // 既存のツールチップがあれば削除
     const existingTooltip = document.querySelector('.skill-tooltip');
@@ -476,7 +476,7 @@ function initSkillTooltips() {
         existingTooltip.remove();
     }
     
-    // シンプルなツールチップ要素を作成
+    // 安定したツールチップ要素を作成
     const tooltip = document.createElement('div');
     tooltip.className = 'skill-tooltip';
     tooltip.style.cssText = `
@@ -491,12 +491,13 @@ function initSkillTooltips() {
         box-shadow: 0 12px 28px rgba(0,0,0,0.3), 0 0 0 1px rgba(0, 212, 170, 0.4) !important;
         border: none !important;
         opacity: 0;
-        pointer-events: none;
+        pointer-events: auto;
         z-index: 99999 !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        transition: all 0.2s ease !important;
         line-height: 1.5 !important;
         word-wrap: break-word !important;
         transform: translateY(-5px) scale(0.95);
+        display: none;
     `;
     
     // 吹き出し用の矢印要素を作成
@@ -517,6 +518,9 @@ function initSkillTooltips() {
     document.body.appendChild(tooltip);
     console.log('Tooltip element created');
     
+    let currentItem = null;
+    let hideTimeout = null;
+    
     // 少し待ってからスキルアイテムを取得
     setTimeout(() => {
         const skillItems = document.querySelectorAll('.skill-item');
@@ -527,46 +531,98 @@ function initSkillTooltips() {
             console.log(`Item ${index} (${item.textContent}):`, description ? 'HAS description' : 'NO description');
             
             if (description) {
+                // マウスエンター（ボタン）
                 item.addEventListener('mouseenter', function(e) {
-                    console.log('TOOLTIP: Mouse entered', this.textContent);
-                    console.log('Description:', description);
+                    console.log('TOOLTIP: Mouse entered button', this.textContent);
                     
-                    tooltip.textContent = description;
-                    tooltip.style.opacity = '1';
-                    tooltip.style.display = 'block';
-                    tooltip.style.transform = 'translateY(0) scale(1)';
+                    // 既存のタイムアウトをクリア
+                    if (hideTimeout) {
+                        clearTimeout(hideTimeout);
+                        hideTimeout = null;
+                    }
                     
-                    // ボタンの位置を取得してその右上に固定表示
+                    currentItem = this;
+                    
+                    // ツールチップのコンテンツを設定
+                    const textNode = tooltip.firstChild;
+                    if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+                        textNode.remove();
+                    }
+                    tooltip.insertBefore(document.createTextNode(description), arrow);
+                    
+                    // 位置を計算
                     const rect = this.getBoundingClientRect();
-                    const x = rect.right + 10; // ボタンの右端から10px右
-                    const y = rect.top - 10;   // ボタンの上端から10px上
+                    const x = rect.right + 10;
+                    const y = rect.top - 10;
                     
-                    // 画面端のチェック
-                    const tooltipWidth = 300; // max-width
+                    // 画面端チェック
+                    const tooltipWidth = 300;
                     const finalX = (x + tooltipWidth > window.innerWidth) 
-                        ? rect.left - tooltipWidth - 10 // 左側に表示
+                        ? rect.left - tooltipWidth - 10 
                         : x;
                     const finalY = (y < 0) 
-                        ? rect.bottom + 10 // 下側に表示
+                        ? rect.bottom + 10 
                         : y;
                     
                     tooltip.style.left = finalX + 'px';
                     tooltip.style.top = finalY + 'px';
+                    tooltip.style.display = 'block';
                     
-                    console.log(`TOOLTIP positioned at: ${finalX}, ${finalY} (button: ${rect.left}-${rect.right}, ${rect.top}-${rect.bottom})`);
+                    // アニメーションで表示
+                    requestAnimationFrame(() => {
+                        tooltip.style.opacity = '1';
+                        tooltip.style.transform = 'translateY(0) scale(1)';
+                    });
+                    
+                    console.log(`TOOLTIP positioned at: ${finalX}, ${finalY}`);
                 });
                 
-                item.addEventListener('mouseleave', function() {
-                    console.log('TOOLTIP: Mouse left', this.textContent);
-                    tooltip.style.opacity = '0';
-                    tooltip.style.transform = 'translateY(-5px) scale(0.95)';
-                    setTimeout(() => {
-                        tooltip.style.display = 'none';
-                    }, 300);
+                // マウスリーブ（ボタン）
+                item.addEventListener('mouseleave', function(e) {
+                    console.log('TOOLTIP: Mouse left button', this.textContent);
+                    
+                    // マウスがツールチップに移動したかチェック
+                    const relatedTarget = e.relatedTarget;
+                    if (relatedTarget && (relatedTarget === tooltip || tooltip.contains(relatedTarget))) {
+                        console.log('Mouse moved to tooltip, keeping visible');
+                        return;
+                    }
+                    
+                    // 少し遅延させて非表示
+                    hideTimeout = setTimeout(() => {
+                        hideTooltip();
+                    }, 100);
                 });
             }
         });
+        
+        // ツールチップ自体のイベント
+        tooltip.addEventListener('mouseenter', function() {
+            console.log('TOOLTIP: Mouse entered tooltip');
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+                hideTimeout = null;
+            }
+        });
+        
+        tooltip.addEventListener('mouseleave', function() {
+            console.log('TOOLTIP: Mouse left tooltip');
+            hideTimeout = setTimeout(() => {
+                hideTooltip();
+            }, 100);
+        });
+        
     }, 100);
+    
+    function hideTooltip() {
+        console.log('TOOLTIP: Hiding tooltip');
+        tooltip.style.opacity = '0';
+        tooltip.style.transform = 'translateY(-5px) scale(0.95)';
+        setTimeout(() => {
+            tooltip.style.display = 'none';
+            currentItem = null;
+        }, 200);
+    }
 }
 
 function initContactForm() {
