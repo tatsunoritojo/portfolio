@@ -1116,10 +1116,11 @@
 }
 
 .interest-tags {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
     gap: calc(var(--spacing-unit) * 0.8);
     justify-items: start;
+    max-width: 100% !important;
 }
 
 .interest-tag {
@@ -1130,13 +1131,14 @@
     font-size: var(--font-size-small);
     border: 1px solid var(--border-color);
     transition: all var(--transition-speed) ease;
-    width: 100%;
+    width: 100% !important;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .interest-tag:hover {
