@@ -503,13 +503,13 @@
 }
 
 /* Skills Section Styles */
-#skills, .skills-section {
-    margin: calc(var(--spacing-unit) * 4) 0;
-    padding: calc(var(--spacing-unit) * 2) 0;
-    border-top: 1px solid var(--border-color);
+#skills, .skills-subsection {
+    margin: 0;
+    padding: calc(var(--spacing-unit) * 4) 0;
+    border-top: none;
 }
 
-#skills h3, .skills-section h3 {
+#skills h3, .skills-subsection h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
@@ -517,26 +517,26 @@
 }
 
 /* About Me Section Styles */
-#about-me, .about-section {
-    margin: calc(var(--spacing-unit) * 4) 0;
-    padding: calc(var(--spacing-unit) * 2) 0;
-    border-top: 1px solid var(--border-color);
+#about-me, .about-subsection {
+    margin: 0;
+    padding: calc(var(--spacing-unit) * 4) 0;
+    border-top: none;
 }
 
-#about-me h3, .about-section h3 {
+#about-me h3, .about-subsection h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
     text-align: center;
 }
 
-#strengths, .strengths-section {
-    margin: calc(var(--spacing-unit) * 4) 0;
-    padding: calc(var(--spacing-unit) * 2) 0;
-    border-top: 1px solid var(--border-color);
+#strengths, .strengths-subsection {
+    margin: 0;
+    padding: calc(var(--spacing-unit) * 4) 0;
+    border-top: none;
 }
 
-#strengths h3, .strengths-section h3 {
+#strengths h3, .strengths-subsection h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
@@ -892,8 +892,8 @@
     border-radius: 2px;
 }
 
-/* Profile Introduction Section Styles */
-.profile-intro-bg {
+/* Independent Hero Section Styles */
+.hero-section.profile-intro-bg {
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -901,6 +901,158 @@
     position: relative;
     overflow: hidden;
     padding: calc(var(--spacing-unit) * 4) 0;
+}
+
+/* Unified Profile Details Section with Parallax Background */
+.unified-profile-details {
+    position: relative;
+    overflow: hidden;
+    min-height: auto;
+    background: 
+        linear-gradient(
+            rgba(26, 26, 26, 0.4), 
+            rgba(26, 26, 26, 0.2)
+        ),
+        url('../images/backgrounds/1753105735458.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Profile Introduction Background (applied to profile details section) */
+.unified-profile-details.profile-intro-bg {
+    min-height: auto;
+    display: block;
+    background: 
+        linear-gradient(
+            rgba(26, 26, 26, 0.4), 
+            rgba(26, 26, 26, 0.2)
+        ),
+        url('../images/backgrounds/1753105735458.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* Subsection styles within unified profile details section */
+.profile-subsection,
+.strengths-subsection, 
+.skills-subsection,
+.about-subsection {
+    padding: calc(var(--spacing-unit) * 4) 0;
+    position: relative;
+    z-index: 3;
+}
+
+/* Enhanced parallax overlay for better text readability */
+.unified-profile-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 70% 30%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 30% 70%, rgba(0, 102, 204, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.unified-profile-details .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile fallback for parallax (some mobile browsers don't support background-attachment: fixed) */
+@media (max-width: 768px) {
+    .unified-profile-details,
+    .unified-profile-details.profile-intro-bg {
+        background-attachment: scroll;
+    }
+    
+    .profile-tagline {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+    
+    .profile-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .profile-intro-text,
+    .profile-details {
+        padding: calc(var(--spacing-unit) * 1.5);
+        margin-left: calc(var(--spacing-unit) * 1);
+        margin-right: calc(var(--spacing-unit) * 1);
+    }
+    
+    .profile-details p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+/* Profile subsection specific styles */
+.profile-subsection .section-header {
+    color: var(--text-primary);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.profile-description {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-intro-text {
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    padding: calc(var(--spacing-unit) * 2);
+    background: rgba(45, 45, 45, 0.9);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.profile-tagline {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    margin: 0 0 calc(var(--spacing-unit) * 1.5) 0;
+    line-height: 1.3;
+}
+
+.profile-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.profile-details {
+    background: rgba(45, 45, 45, 0.9);
+    padding: calc(var(--spacing-unit) * 2.5);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    text-align: left;
+}
+
+.profile-details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin: 0 0 calc(var(--spacing-unit) * 1.5) 0;
+}
+
+.profile-details p:last-child {
+    margin-bottom: 0;
 }
 
 /* Background Slideshow Styles */
