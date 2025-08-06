@@ -503,13 +503,13 @@
 }
 
 /* Skills Section Styles */
-#skills {
+#skills, .skills-section {
     margin: calc(var(--spacing-unit) * 4) 0;
     padding: calc(var(--spacing-unit) * 2) 0;
     border-top: 1px solid var(--border-color);
 }
 
-#skills h3 {
+#skills h3, .skills-section h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
@@ -517,39 +517,39 @@
 }
 
 /* About Me Section Styles */
-#about-me {
+#about-me, .about-section {
     margin: calc(var(--spacing-unit) * 4) 0;
     padding: calc(var(--spacing-unit) * 2) 0;
     border-top: 1px solid var(--border-color);
 }
 
-#about-me h3 {
+#about-me h3, .about-section h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
     text-align: center;
 }
 
-#strengths {
+#strengths, .strengths-section {
     margin: calc(var(--spacing-unit) * 4) 0;
     padding: calc(var(--spacing-unit) * 2) 0;
     border-top: 1px solid var(--border-color);
 }
 
-#strengths h3 {
+#strengths h3, .strengths-section h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
     text-align: center;
 }
 
-#ai-workflow {
+#ai-workflow, .ai-workflow-section {
     margin: calc(var(--spacing-unit) * 4) 0;
     padding: calc(var(--spacing-unit) * 2) 0;
     border-top: 1px solid var(--border-color);
 }
 
-#ai-workflow h3 {
+#ai-workflow h3, .ai-workflow-section h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
