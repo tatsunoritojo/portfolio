@@ -45,6 +45,126 @@
     }
 }
 
+/* Professional Status Dot Animations */
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.7);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 4px rgba(0, 212, 170, 0.2);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* Professional Element Entry Animations */
+
+/* Initial hidden states for professional animations */
+.hero-animate-profile {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-animate-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+}
+
+.hero-animate-tags {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
+}
+
+.hero-animate-cta {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s;
+}
+
+/* Active animation states */
+.hero-animate-profile.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hero-animate-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-animate-tags.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-animate-cta.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Professional Element Entry Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInScale {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
