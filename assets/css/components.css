@@ -1269,7 +1269,7 @@
 
 .interest-tags {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
     gap: calc(var(--spacing-unit) * 0.8);
     justify-items: start;
     max-width: 100% !important;
@@ -1288,6 +1288,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-width: 0;
     position: relative;
     cursor: pointer;
     box-sizing: border-box;
@@ -1576,16 +1577,25 @@
 /* レスポンシブ対応 - 画面サイズによって柔軟に列数を調整 */
 @media (max-width: 480px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+        gap: calc(var(--spacing-unit) * 0.6);
     }
     
     .interest-tag {
         font-size: 0.8rem;
-        padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 0.8);
+        padding: calc(var(--spacing-unit) * 0.4) calc(var(--spacing-unit) * 0.6);
+        white-space: normal;
+        line-height: 1.2;
     }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
+    .interest-tags {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
     .interest-tags {
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
     }
@@ -1593,7 +1603,7 @@
 
 @media (min-width: 1200px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
     }
 }
 
