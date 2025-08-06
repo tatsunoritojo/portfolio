@@ -107,7 +107,7 @@ function loadSkillsData() {
                 
                 item.addEventListener('mouseenter', function() {
                     console.log('Mouse entered:', this.textContent);
-                    this.style.backgroundColor = 'rgba(0, 212, 170, 0.2)';
+                    this.style.backgroundColor = 'rgba(30, 58, 138, 0.2)';
                     this.style.transform = 'translateY(-3px) scale(1.02)';
                 });
                 
@@ -491,7 +491,7 @@ function initSkillTooltips() {
         font-size: 13px !important;
         font-weight: 500 !important;
         max-width: 280px !important;
-        box-shadow: 0 12px 28px rgba(0,0,0,0.3), 0 0 0 1px rgba(0, 212, 170, 0.4) !important;
+        box-shadow: 0 12px 28px rgba(0,0,0,0.3), 0 0 0 1px rgba(30, 58, 138, 0.4) !important;
         border: none !important;
         opacity: 0;
         pointer-events: auto;
