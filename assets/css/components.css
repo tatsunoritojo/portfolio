@@ -503,13 +503,13 @@
 }
 
 /* Skills Section Styles */
-#skills {
-    margin: calc(var(--spacing-unit) * 4) 0;
-    padding: calc(var(--spacing-unit) * 2) 0;
-    border-top: 1px solid var(--border-color);
+#skills, .skills-subsection {
+    margin: 0;
+    padding: calc(var(--spacing-unit) * 4) 0;
+    border-top: none;
 }
 
-#skills h3 {
+#skills h3, .skills-subsection h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
@@ -517,26 +517,26 @@
 }
 
 /* About Me Section Styles */
-#about-me {
-    margin: calc(var(--spacing-unit) * 4) 0;
-    padding: calc(var(--spacing-unit) * 2) 0;
-    border-top: 1px solid var(--border-color);
+#about-me, .about-subsection {
+    margin: 0;
+    padding: calc(var(--spacing-unit) * 4) 0;
+    border-top: none;
 }
 
-#about-me h3 {
+#about-me h3, .about-subsection h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
     text-align: center;
 }
 
-#strengths {
-    margin: calc(var(--spacing-unit) * 4) 0;
-    padding: calc(var(--spacing-unit) * 2) 0;
-    border-top: 1px solid var(--border-color);
+#strengths, .strengths-subsection {
+    margin: 0;
+    padding: calc(var(--spacing-unit) * 4) 0;
+    border-top: none;
 }
 
-#strengths h3 {
+#strengths h3, .strengths-subsection h3 {
     color: var(--accent-primary);
     margin-bottom: calc(var(--spacing-unit) * 2);
     font-size: var(--font-size-h3);
@@ -892,15 +892,45 @@
     border-radius: 2px;
 }
 
-/* Profile Introduction Section Styles */
+/* Unified Profile Section Styles */
+.unified-profile-section {
+    position: relative;
+    overflow: hidden;
+    min-height: auto;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 50%, var(--primary-bg) 100%);
+}
+
+/* Profile Introduction Background (applied to unified section) */
 .profile-intro-bg {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
+    min-height: auto;
+    display: block;
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 50%, var(--primary-bg) 100%);
     position: relative;
     overflow: hidden;
+    padding: 0;
+}
+
+/* Subsection styles within unified section */
+.hero-subsection {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
     padding: calc(var(--spacing-unit) * 4) 0;
+}
+
+.profile-subsection,
+.strengths-subsection, 
+.skills-subsection,
+.about-subsection {
+    padding: calc(var(--spacing-unit) * 4) 0;
+    position: relative;
+    z-index: 3;
+}
+
+/* Profile subsection specific styles */
+.profile-subsection .section-header {
+    color: var(--text-primary);
+    margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
 /* Background Slideshow Styles */
