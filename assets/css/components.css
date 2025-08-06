@@ -1288,6 +1288,8 @@
     gap: calc(var(--spacing-unit) * 0.8);
     justify-content: flex-start;
     max-width: 100% !important;
+    align-items: flex-start;
+    line-height: 1.2;
 }
 
 .interest-tag {
@@ -1305,6 +1307,13 @@
     box-sizing: border-box;
     width: auto;
     flex-shrink: 0;
+    height: auto;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+    line-height: 1.2;
 }
 
 .interest-tag:hover {
@@ -1587,34 +1596,48 @@
     }
 }
 
-/* レスポンシブ対応 - Flexboxレイアウト */
+/* レスポンシブ対応 - 最適化されたFlexboxレイアウト */
 @media (max-width: 480px) {
     .interest-tags {
         justify-content: center;
-        gap: calc(var(--spacing-unit) * 0.6);
+        gap: calc(var(--spacing-unit) * 0.5);
+        row-gap: calc(var(--spacing-unit) * 0.6);
     }
     
     .interest-tag {
-        font-size: 0.8rem;
-        padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 0.8);
+        font-size: 0.75rem;
+        padding: calc(var(--spacing-unit) * 0.4) calc(var(--spacing-unit) * 0.7);
+        min-height: 32px;
     }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
     .interest-tags {
         justify-content: center;
+        gap: calc(var(--spacing-unit) * 0.7);
+        row-gap: calc(var(--spacing-unit) * 0.8);
+    }
+    
+    .interest-tag {
+        font-size: 0.85rem;
+        padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 0.9);
+        min-height: 34px;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .interest-tags {
         justify-content: flex-start;
+        gap: calc(var(--spacing-unit) * 0.8);
+        row-gap: calc(var(--spacing-unit) * 1);
     }
 }
 
 @media (min-width: 1025px) {
     .interest-tags {
         justify-content: flex-start;
+        gap: calc(var(--spacing-unit) * 0.8);
+        row-gap: calc(var(--spacing-unit) * 1);
     }
 }
 
