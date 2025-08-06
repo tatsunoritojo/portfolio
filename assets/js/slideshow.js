@@ -6,39 +6,69 @@ class BackgroundSlideshow {
         this.slides = document.querySelectorAll('.background-slideshow .slide');
         this.autoplayInterval = null;
         this.autoplayDelay = 8000; // 8秒間隔（ゆっくり）
+        this.imageCache = new Map(); // 画像キャッシュ
+        this.isInitialized = false;
         
         this.init();
     }
     
     init() {
-        if (this.slides.length === 0) return;
+        if (this.slides.length === 0 || this.isInitialized) return;
         
-        // 背景画像をdata-bg属性から設定
-        this.slides.forEach((slide, index) => {
-            const bgImage = slide.dataset.bg;
-            if (bgImage) {
-                // 画像の存在確認
+        this.isInitialized = true;
+        
+        // 最適化された画像プリロード
+        this.preloadImages()
+            .then(() => {
+                console.log('All background images preloaded successfully');
+                this.setupEventListeners();
+                this.startAutoplay();
+            })
+            .catch(error => {
+                console.warn('Some images failed to preload:', error);
+                this.setupEventListeners();
+                this.startAutoplay();
+            });
+        
+        console.log('Background slideshow initialized with', this.slides.length, 'slides');
+    }
+    
+    async preloadImages() {
+        const imagePromises = Array.from(this.slides).map((slide, index) => {
+            return new Promise((resolve) => {
+                const bgImage = slide.dataset.bg;
+                if (!bgImage) {
+                    resolve();
+                    return;
+                }
+                
+                if (this.imageCache.has(bgImage)) {
+                    slide.style.backgroundImage = `url('${bgImage}')`;
+                    resolve();
+                    return;
+                }
+                
                 const img = new Image();
                 img.onload = () => {
+                    this.imageCache.set(bgImage, true);
                     slide.style.backgroundImage = `url('${bgImage}')`;
-                    console.log(`Background image ${index + 1} loaded successfully: ${bgImage}`);
+                    console.log(`Background image ${index + 1} loaded: ${bgImage}`);
+                    resolve();
                 };
                 img.onerror = () => {
                     console.warn(`Failed to load background image: ${bgImage}`);
-                    // フォールバック：グラデーション背景
                     slide.style.background = `linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%)`;
+                    resolve();
                 };
-                img.src = bgImage;
-            }
+                
+                // 遅延読み込みで負荷を分散
+                setTimeout(() => {
+                    img.src = bgImage;
+                }, index * 200);
+            });
         });
         
-        // イベントリスナーの設定
-        this.setupEventListeners();
-        
-        // 自動再生開始
-        this.startAutoplay();
-        
-        console.log('Background slideshow initialized with', this.slides.length, 'slides');
+        return Promise.all(imagePromises);
     }
     
     setupEventListeners() {
