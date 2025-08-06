@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loadProjectsData(isEnglish);
     initContactForm();
     initSmoothScrolling();
+    
+    // プロフェッショナルなヒーローアニメーションを初期化
+    initHeroAnimations();
 });
 
 async function loadProfileData(isEnglish = false) {
@@ -623,6 +626,31 @@ function initSkillTooltips() {
             currentItem = null;
         }, 200);
     }
+}
+
+function initHeroAnimations() {
+    console.log('Initializing professional hero animations...');
+    
+    // ページ読み込み後、少し遅延してから順次アニメーション開始
+    setTimeout(() => {
+        const animationElements = [
+            { selector: '.hero-animate-profile', delay: 100 },
+            { selector: '.hero-animate-content', delay: 300 },
+            { selector: '.hero-animate-tags', delay: 600 },
+            { selector: '.hero-animate-cta', delay: 900 }
+        ];
+        
+        animationElements.forEach(({ selector, delay }) => {
+            setTimeout(() => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.classList.add('active');
+                    console.log(`Animated: ${selector}`);
+                }
+            }, delay);
+        });
+        
+    }, 500); // 初回500ms遅延でページの安定を待つ
 }
 
 function initContactForm() {
