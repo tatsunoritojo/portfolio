@@ -400,7 +400,7 @@
 .skill-item:hover {
     transform: translateY(-2px);
     border-color: var(--accent-primary);
-    color: var(--accent-primary);
+    color: var(--text-primary);
 }
 
 /* Tech Tag Animations */

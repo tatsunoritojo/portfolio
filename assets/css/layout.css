@@ -145,7 +145,7 @@
 
 .about-year {
     font-weight: 700;
-    color: var(--accent-primary);
+    color: var(--text-primary);
     padding: calc(var(--spacing-unit) * 0.5);
     background-color: var(--primary-bg);
     border-radius: 8px;
