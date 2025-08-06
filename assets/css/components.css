@@ -1117,7 +1117,7 @@
 
 .interest-tags {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: calc(var(--spacing-unit) * 0.8);
     justify-items: start;
 }
@@ -1422,7 +1422,7 @@
 /* モバイル対応 */
 @media (max-width: 768px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .interest-tag {
