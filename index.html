@@ -51,7 +51,7 @@
     </header>
 
     <main class="main-content">
-        <section id="hero" class="hero-section profile-intro-bg">
+        <section class="unified-profile-section profile-intro-bg">
             <!-- 背景スライドショー -->
             <div class="background-slideshow">
                 <div class="slide active" data-bg="assets/images/backgrounds/1753104401527.jpg"></div>
@@ -60,231 +60,207 @@
                 <div class="slide" data-bg="assets/images/backgrounds/1753104737689.jpg"></div>
             </div>
             
-            <div class="container">
-                <div class="profile-intro-content">
-                    <div class="profile-image-wrapper">
-                        <div class="profile-image-placeholder">
-                            <!-- 顔写真がここに入ります -->
-                            <img src="assets/images/profile/profile-photo.jpg.jpg" alt="プロフィール写真" class="profile-photo">
+            <!-- Hero部分 -->
+            <div id="hero" class="hero-subsection">
+                <div class="container">
+                    <div class="profile-intro-content">
+                        <div class="profile-image-wrapper">
+                            <div class="profile-image-placeholder">
+                                <img src="assets/images/profile/profile-photo.jpg.jpg" alt="プロフィール写真" class="profile-photo">
+                            </div>
+                            <div class="profile-status">
+                                <span class="status-dot"></span>
+                                <span class="status-text">フリーランス</span>
+                            </div>
                         </div>
-                        <div class="profile-status">
-                            <span class="status-dot"></span>
-                            <span class="status-text">フリーランス</span>
-                        </div>
-                    </div>
-                    <div class="profile-intro-text">
-                        <h1 class="profile-name">東城 立憲</h1>
-                        <p class="profile-title">AI駆動開発エンジニア</p>
-                        <div class="profile-highlights">
-                            <a href="articles/educational-psychology.html" class="highlight-item">
-                                <span class="highlight-icon">🎓</span>
-                                <span class="highlight-text">教育心理学修士</span>
-                            </a>
-                            <a href="articles/fullstack-development.html" class="highlight-item">
-                                <span class="highlight-icon">💻</span>
-                                <span class="highlight-text">フルスタック開発</span>
-                            </a>
-                            <a href="articles/rapid-prototyping.html" class="highlight-item">
-                                <span class="highlight-icon">🚀</span>
-                                <span class="highlight-text">AI駆動開発</span>
-                            </a>
-                        </div>
-                        <div class="profile-personal-info">
-                            <div class="personal-section">
-                                <h3>趣味・興味</h3>
-                                <div class="interest-tags">
-                                    <a href="articles/gaming.html" class="interest-tag has-article">🎮 ゲーム</a>
-                                    <a href="articles/road-bike.html" class="interest-tag has-article">🚴‍♂️ ロードバイク</a>
-                                    <a href="articles/wheelchair-softball.html" class="interest-tag has-article">♿ 車いすソフトボール</a>
-                                    <a href="articles/special-olympics.html" class="interest-tag has-article">🏅 スペシャルオリンピックス</a>
-                                    <a href="articles/fid-basketball.html" class="interest-tag has-article">🏀 FIDバスケットボール指導</a>
-                                    <a href="articles/anime.html" class="interest-tag has-article">📺 アニメ</a>
-                                    <a href="articles/movies.html" class="interest-tag has-article">🎬 映画</a>
-                                    <a href="articles/golf.html" class="interest-tag has-article">⛳ ゴルフ</a>
-                                    <a href="articles/drive.html" class="interest-tag has-article">🚗 ドライブ</a>
-                                    <a href="articles/nature.html" class="interest-tag has-article">🌄 自然の景色を見ること</a>
-                                    <a href="articles/ramen.html" class="interest-tag has-article">🍜 ラーメンを食べること</a>
-                                    <a href="articles/reading.html" class="interest-tag has-article">📚 読書</a>
+                        <div class="profile-intro-text">
+                            <h1 class="profile-name">東城 立憲</h1>
+                            <p class="profile-title">AI駆動開発エンジニア</p>
+                            <div class="profile-highlights">
+                                <a href="articles/educational-psychology.html" class="highlight-item">
+                                    <span class="highlight-icon">🎓</span>
+                                    <span class="highlight-text">教育心理学修士</span>
+                                </a>
+                                <a href="articles/fullstack-development.html" class="highlight-item">
+                                    <span class="highlight-icon">💻</span>
+                                    <span class="highlight-text">フルスタック開発</span>
+                                </a>
+                                <a href="articles/rapid-prototyping.html" class="highlight-item">
+                                    <span class="highlight-icon">🚀</span>
+                                    <span class="highlight-text">AI駆動開発</span>
+                                </a>
+                            </div>
+                            <div class="profile-personal-info">
+                                <div class="personal-section">
+                                    <h3>趣味・興味</h3>
+                                    <div class="interest-tags">
+                                        <a href="articles/gaming.html" class="interest-tag has-article">🎮 ゲーム</a>
+                                        <a href="articles/road-bike.html" class="interest-tag has-article">🚴‍♂️ ロードバイク</a>
+                                        <a href="articles/wheelchair-softball.html" class="interest-tag has-article">♿ 車いすソフトボール</a>
+                                        <a href="articles/special-olympics.html" class="interest-tag has-article">🏅 スペシャルオリンピックス</a>
+                                        <a href="articles/fid-basketball.html" class="interest-tag has-article">🏀 FIDバスケットボール指導</a>
+                                        <a href="articles/anime.html" class="interest-tag has-article">📺 アニメ</a>
+                                        <a href="articles/movies.html" class="interest-tag has-article">🎬 映画</a>
+                                        <a href="articles/golf.html" class="interest-tag has-article">⛳ ゴルフ</a>
+                                        <a href="articles/drive.html" class="interest-tag has-article">🚗 ドライブ</a>
+                                        <a href="articles/nature.html" class="interest-tag has-article">🌄 自然の景色を見ること</a>
+                                        <a href="articles/ramen.html" class="interest-tag has-article">🍜 ラーメンを食べること</a>
+                                        <a href="articles/reading.html" class="interest-tag has-article">📚 読書</a>
+                                    </div>
+                                </div>
+                                <div class="personal-section">
+                                    <h3>その他の情報</h3>
+                                    <div class="additional-info">
+                                        <p class="info-text">特別支援教育の現場経験を活かした、誰にでも使いやすいシステム設計を心がけています。</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="personal-section">
-                                <h3>その他の情報</h3>
-                                <div class="additional-info">
-                                    <!-- あとで内容を入力 -->
-                                    <p class="info-text">特別支援教育の現場経験を活かした、誰にでも使いやすいシステム設計を心がけています。</p>
+                            <a href="#contact" class="profile-cta-btn">お問い合わせはこちら</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- プロフィール詳細部分 -->
+            <div id="profile" class="profile-subsection">
+                <div class="container">
+                    <h2 class="section-header">プロフィール</h2>
+                    <div class="profile-summary">
+                        <p>AI駆動開発で圧倒的な開発速度を実現するフルスタックエンジニア。ChatGPTやClaudeを活用した次世代の開発手法で、クライアントのビジネス価値を最大化します。</p>
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-text">
+                            <p>AI駆動開発を専門とするフルスタックエンジニア。最新のAI技術、特にChatGPTやClaudeを活用した「バイブコーディング」により、従来の手法に比べて圧倒的な開発速度と品質を実現します。</p>
+                            <p>複雑な要件定義から実装、テストまで、開発プロセス全体を効率化し、クライアントのビジネス価値を最大化することに情熱を注いでいます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 強み・サービス部分 -->
+            <div id="strengths" class="strengths-subsection">
+                <div class="container">
+                    <h2 class="section-header">強み・提供サービス</h2>
+                    <div class="strengths-grid">
+                        <div class="strength-item">
+                            <h3>高速プロトタイピング</h3>
+                            <p>AI支援により、アイデアから動作するプロトタイプまでを圧倒的なスピードで実現します。</p>
+                        </div>
+                        <div class="strength-item">
+                            <h3>フルスタック開発</h3>
+                            <p>フロントエンドからバックエンド、インフラまで、一貫した開発体制でプロジェクトを推進します。</p>
+                        </div>
+                        <div class="strength-item">
+                            <h3>業務効率化システム</h3>
+                            <p>既存の業務フローを分析し、自動化により効率を劇的に向上させるシステムを構築します。</p>
+                        </div>
+                        <div class="strength-item">
+                            <h3>AI統合ソリューション</h3>
+                            <p>ChatGPT、Claude等のAI APIを活用した次世代のWebアプリケーションを開発します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 技術スキル部分 -->
+            <div id="skills" class="skills-subsection">
+                <div class="container">
+                    <h2 class="section-header">技術スキル</h2>
+                    <div class="skill-category">
+                        <h3>プログラミング言語</h3>
+                        <ul class="skill-list" id="skills-lang"></ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>フレームワーク・ライブラリ</h3>
+                        <ul class="skill-list" id="skills-fw"></ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>クラウド・ツール・AI</h3>
+                        <ul class="skill-list" id="skills-tools"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Me部分 -->
+            <div id="about-me" class="about-subsection">
+                <div class="container">
+                    <h2 class="section-header">About Me</h2>
+                    <div class="about-timeline">
+                        <div class="about-item">
+                            <div class="about-year">1997年</div>
+                            <div class="about-content">
+                                <h4>大阪府富田林市で生まれる</h4>
+                                <p>ゲーム好きで勉強嫌いな子ども時代を過ごし、母を困らせる日々。</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2013年</div>
+                            <div class="about-content">
+                                <h4>大阪府立河南高等学校入学</h4>
+                                <p>勉強嫌いが抜けず、第1志望よりもランクを落として入学。</p>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2015年</div>
+                            <div class="about-content">
+                                <h4>高校3年生で一念発起</h4>
+                                <p>220/360位まで成績が低下。教師になりたいという夢を捨てずに学年1位が目指すような志望校を面談で伝えるが、教師から一蹴される。</p>
+                                <div class="about-highlight">
+                                    <strong>転機：</strong> 1年間の猛勉強の末、センター試験で47％→83％まで成績上昇を実現。
                                 </div>
                             </div>
                         </div>
-                        <a href="#contact" class="profile-cta-btn">お問い合わせはこちら</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="profile" class="profile-section">
-            <div class="container">
-                <h2 class="section-header">プロフィール</h2>
-                <div class="profile-summary">
-                    <p>AI駆動開発で圧倒的な開発速度を実現するフルスタックエンジニア。ChatGPTやClaudeを活用した次世代の開発手法で、クライアントのビジネス価値を最大化します。</p>
-                </div>
-                
-                <div class="profile-content">
-                    <div class="profile-text">
-                        <p>AI駆動開発を専門とするフルスタックエンジニア。最新のAI技術、特にChatGPTやClaudeを活用した「バイブコーディング」により、従来の手法に比べて圧倒的な開発速度と品質を実現します。</p>
-                        <p>複雑な要件定義から実装、テストまで、開発プロセス全体を効率化し、クライアントのビジネス価値を最大化することに情熱を注いでいます。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="strengths" class="strengths-section">
-            <div class="container">
-                <h2 class="section-header">強み・提供サービス</h2>
-                <div class="strengths-grid">
-                    <div class="strength-item">
-                        <h3>高速プロトタイピング</h3>
-                        <p>AI支援により、アイデアから動作するプロトタイプまでを圧倒的なスピードで実現します。</p>
-                    </div>
-                    <div class="strength-item">
-                        <h3>フルスタック開発</h3>
-                        <p>フロントエンドからバックエンド、インフラまで、一貫した開発体制でプロジェクトを推進します。</p>
-                    </div>
-                    <div class="strength-item">
-                        <h3>業務効率化システム</h3>
-                        <p>既存の業務フローを分析し、自動化により効率を劇的に向上させるシステムを構築します。</p>
-                    </div>
-                    <div class="strength-item">
-                        <h3>AI統合ソリューション</h3>
-                        <p>ChatGPT、Claude等のAI APIを活用した次世代のWebアプリケーションを開発します。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <h2 class="section-header">技術スキル</h2>
-                <div class="skill-category">
-                    <h3>プログラミング言語</h3>
-                    <ul class="skill-list" id="skills-lang"></ul>
-                </div>
-                <div class="skill-category">
-                    <h3>フレームワーク・ライブラリ</h3>
-                    <ul class="skill-list" id="skills-fw"></ul>
-                </div>
-                <div class="skill-category">
-                    <h3>クラウド・ツール・AI</h3>
-                    <ul class="skill-list" id="skills-tools"></ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="about-me" class="about-section">
-            <div class="container">
-                <h2 class="section-header">About Me</h2>
-                <div class="about-timeline">
-                    <div class="about-item">
-                        <div class="about-year">1997年</div>
-                        <div class="about-content">
-                            <h4>大阪府富田林市で生まれる</h4>
-                            <p>ゲーム好きで勉強嫌いな子ども時代を過ごし、母を困らせる日々。</p>
+                        <div class="about-item">
+                            <div class="about-year">2016年</div>
+                            <div class="about-content">
+                                <h4>広島大学教育学部初等教育教員養成コース入学</h4>
+                                <p>努力が実を結び、念願の教育学部に入学。</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="about-year">2013年</div>
-                        <div class="about-content">
-                            <h4>大阪府立河南高等学校入学</h4>
-                            <p>勉強嫌いが抜けず、第1志望よりもランクを落として入学。</p>
+                        <div class="about-item">
+                            <div class="about-year">2016年 - 2020年</div>
+                            <div class="about-content">
+                                <h4>小学校教員養成課程</h4>
+                                <p>小学校の先生になるための勉強を進める傍ら、心理学にのめりこむ。教育には、教育に関する知識以外の幅広い知見こそ人を育てるうえで重要だと考えるようになる。</p>
+                                <div class="about-highlight">
+                                    <strong>興味の拡大：</strong> 教育と心理学の融合に強い関心を持つようになる。
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="about-year">2015年</div>
-                        <div class="about-content">
-                            <h4>高校3年生で一念発起</h4>
-                            <p>220/360位まで成績が低下。教師になりたいという夢を捨てずに学年1位が目指すような志望校を面談で伝えるが、教師から一蹴される。</p>
-                            <div class="about-highlight">
-                                <strong>転機：</strong> 1年間の猛勉強の末、センター試験で47％→83％まで成績上昇を実現。
+                        <div class="about-item">
+                            <div class="about-year">2020年 - 2022年</div>
+                            <div class="about-content">
+                                <h4>広島大学大学院 教育科学専攻</h4>
+                                <p>発達障害（自閉症スペクトラム）の学習について研究を行う。特別支援教育分野での専門知識を深める。</p>
+                                <div class="about-highlight">
+                                    <strong>研究テーマ：</strong> 発達障害のある子どもたちの学習特性と効果的な支援方法について
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2022年 - 2025年</div>
+                            <div class="about-content">
+                                <h4>株式会社IVY フリースクールスタッフ・児童指導員</h4>
+                                <p>発達障害、不登校、軽度知的障害のある子どもたちに学習支援と心理情緒サポートを提供。</p>
+                                <div class="about-highlight">
+                                    <strong>プログラミング学習開始：</strong> 膨大な事務仕事に追われる中で業務効率化の必要性を痛感し、独学でプログラミングを学び始める。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-item">
+                            <div class="about-year">2025年4月 - 現在</div>
+                            <div class="about-content">
+                                <h4>広島大学 特別支援教育特別専攻科</h4>
+                                <p>特別支援教育教員免許の取得を目指し、知的障害者のバスケットボール指導方法について研究を実施。</p>
+                                <div class="about-highlight">
+                                    <strong>現在のプロジェクト：</strong> グレーゾーンの子どもに対する塾の立ち上げに助力。AIを活用した短期間での効率的な開発を実現。
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="about-item">
-                        <div class="about-year">2016年</div>
-                        <div class="about-content">
-                            <h4>広島大学教育学部初等教育教員養成コース入学</h4>
-                            <p>努力が実を結び、念願の教育学部に入学。</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="about-year">2016年 - 2020年</div>
-                        <div class="about-content">
-                            <h4>小学校教員養成課程</h4>
-                            <p>小学校の先生になるための勉強を進める傍ら、心理学にのめりこむ。教育には、教育に関する知識以外の幅広い知見こそ人を育てるうえで重要だと考えるようになる。</p>
-                            <div class="about-highlight">
-                                <strong>興味の拡大：</strong> 教育と心理学の融合に強い関心を持つようになる。
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="about-year">2020年 - 2022年</div>
-                        <div class="about-content">
-                            <h4>広島大学大学院 教育科学専攻</h4>
-                            <p>発達障害（自閉症スペクトラム）の学習について研究を行う。特別支援教育分野での専門知識を深める。</p>
-                            <div class="about-highlight">
-                                <strong>研究テーマ：</strong> 発達障害のある子どもたちの学習特性と効果的な支援方法について
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="about-year">2022年 - 2025年</div>
-                        <div class="about-content">
-                            <h4>株式会社IVY フリースクールスタッフ・児童指導員</h4>
-                            <p>発達障害、不登校、軽度知的障害のある子どもたちに学習支援と心理情緒サポートを提供。</p>
-                            <div class="about-highlight">
-                                <strong>プログラミング学習開始：</strong> 膨大な事務仕事に追われる中で業務効率化の必要性を痛感し、独学でプログラミングを学び始める。
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="about-year">2025年4月 - 現在</div>
-                        <div class="about-content">
-                            <h4>広島大学 特別支援教育特別専攻科</h4>
-                            <p>特別支援教育教員免許の取得を目指し、知的障害者のバスケットボール指導方法について研究を実施。</p>
-                            <div class="about-highlight">
-                                <strong>現在のプロジェクト：</strong> グレーゾーンの子どもに対する塾の立ち上げに助力。AIを活用した短期間での効率的な開発を実現。
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-mission">
-                    <h4>ミッション</h4>
-                    <p>勉強嫌いの子ども時代から、努力により道を切り開いてきた経験。特別支援教育の現場で培った課題発見力と、AI駆動開発による解決力を組み合わせ、教育分野における真の問題解決を目指しています。</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="ai-workflow" class="ai-workflow-section">
-            <div class="container">
-                <h2 class="section-header">AI活用開発フロー</h2>
-                <div class="workflow-steps">
-                    <div class="workflow-step">
-                        <div class="step-number">1</div>
-                        <h3>要件分析</h3>
-                        <p>AIを活用してクライアントの課題を詳細に分析し、最適な解決策を提案</p>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">2</div>
-                        <h3>設計・アーキテクチャ</h3>
-                        <p>拡張性と保守性を重視したシステム設計をAI支援で効率的に実施</p>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">3</div>
-                        <h3>高速実装</h3>
-                        <p>バイブコーディングにより、従来比3-5倍の速度で高品質なコードを生成</p>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">4</div>
-                        <h3>品質保証・テスト</h3>
-                        <p>AI支援による自動テスト生成と品質チェックで信頼性の高いシステムを実現</p>
+                    <div class="about-mission">
+                        <h4>ミッション</h4>
+                        <p>勉強嫌いの子ども時代から、努力により道を切り開いてきた経験。特別支援教育の現場で培った課題発見力と、AI駆動開発による解決力を組み合わせ、教育分野における真の問題解決を目指しています。</p>
                     </div>
                 </div>
             </div>
