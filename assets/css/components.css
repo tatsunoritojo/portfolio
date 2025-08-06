@@ -1283,10 +1283,11 @@
 }
 
 .interest-tags {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(160px, max-content)) !important;
+    display: flex !important;
+    flex-wrap: wrap;
     gap: calc(var(--spacing-unit) * 0.8);
-    justify-content: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     max-width: 100% !important;
 }
 
@@ -1300,15 +1301,13 @@
     transition: all var(--transition-speed) ease;
     text-align: center;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    min-width: 120px;
-    max-width: 220px;
     position: relative;
     cursor: pointer;
     box-sizing: border-box;
-    width: fit-content;
-    justify-self: center;
+    flex-shrink: 0;
+    width: auto;
+    min-width: 120px;
+    max-width: none;
 }
 
 .interest-tag:hover {
@@ -1591,44 +1590,60 @@
     }
 }
 
-/* レスポンシブ対応 - 柔軟なグリッドシステム */
+/* レスポンシブ対応 - 柔軟なFlexboxシステム */
 @media (max-width: 480px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
-        gap: calc(var(--spacing-unit) * 0.6);
         justify-content: center;
+        gap: calc(var(--spacing-unit) * 0.6);
     }
     
     .interest-tag {
-        min-width: 140px;
-        max-width: 200px;
+        min-width: 100px;
+        max-width: 90vw;
         font-size: 0.8rem;
+        padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 0.8);
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(150px, max-content)) !important;
         justify-content: center;
+        gap: calc(var(--spacing-unit) * 0.7);
     }
     
     .interest-tag {
-        min-width: 150px;
-        max-width: 200px;
+        min-width: 110px;
+        max-width: 85vw;
+        font-size: 0.85rem;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(160px, max-content)) !important;
-        justify-content: start;
+        justify-content: flex-start;
+    }
+    
+    .interest-tag {
+        min-width: 120px;
+        max-width: 80vw;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 }
 
 @media (min-width: 1025px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(160px, max-content)) !important;
-        justify-content: start;
+        justify-content: flex-start;
+    }
+    
+    .interest-tag {
+        max-width: 70vw;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 }
 
