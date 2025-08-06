@@ -892,16 +892,27 @@
     border-radius: 2px;
 }
 
-/* Unified Profile Section Styles */
-.unified-profile-section {
+/* Independent Hero Section Styles */
+.hero-section.profile-intro-bg {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 50%, var(--primary-bg) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: calc(var(--spacing-unit) * 4) 0;
+}
+
+/* Unified Profile Details Section */
+.unified-profile-details {
     position: relative;
     overflow: hidden;
     min-height: auto;
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 50%, var(--primary-bg) 100%);
 }
 
-/* Profile Introduction Background (applied to unified section) */
-.profile-intro-bg {
+/* Profile Introduction Background (applied to profile details section) */
+.unified-profile-details.profile-intro-bg {
     min-height: auto;
     display: block;
     background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 50%, var(--primary-bg) 100%);
@@ -910,14 +921,7 @@
     padding: 0;
 }
 
-/* Subsection styles within unified section */
-.hero-subsection {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    padding: calc(var(--spacing-unit) * 4) 0;
-}
-
+/* Subsection styles within unified profile details section */
 .profile-subsection,
 .strengths-subsection, 
 .skills-subsection,
