@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ¹¯íüëBkÊÓ²ü·çó¢¯Æ£Ö¶K’ô°
     window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section[id]');
+        // ç‰¹å®šã®ã‚»ã‚¯ã‚·ãƒ§ãƒ³ã®ã¿ã‚’å¯¾è±¡ã«ã™ã‚‹
+        const sections = document.querySelectorAll('#hero, #profile, #strengths, #skills, #about-me, #projects, #contact');
         const scrollPos = window.scrollY + 100;
         
         sections.forEach(section => {
