@@ -1269,9 +1269,9 @@
 
 .interest-tags {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+    grid-template-columns: repeat(6, 180px) !important;
     gap: calc(var(--spacing-unit) * 0.8);
-    justify-items: start;
+    justify-content: start;
     max-width: 100% !important;
 }
 
@@ -1283,7 +1283,7 @@
     font-size: var(--font-size-small);
     border: 1px solid var(--border-color);
     transition: all var(--transition-speed) ease;
-    width: 100% !important;
+    width: 180px !important;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -1574,38 +1574,48 @@
     }
 }
 
-/* レスポンシブ対応 - 画面サイズによって柔軟に列数を調整 */
+/* レスポンシブ対応 - ボタンサイズ固定で列数を調整 */
 @media (max-width: 480px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) !important;
+        grid-template-columns: repeat(2, 180px) !important;
         gap: calc(var(--spacing-unit) * 0.6);
+        justify-content: center;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .interest-tags {
+        grid-template-columns: repeat(2, 160px) !important;
     }
     
     .interest-tag {
-        font-size: 0.8rem;
-        padding: calc(var(--spacing-unit) * 0.4) calc(var(--spacing-unit) * 0.6);
-        white-space: normal;
-        line-height: 1.2;
+        width: 160px !important;
     }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+        grid-template-columns: repeat(3, 180px) !important;
+        justify-content: center;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+        grid-template-columns: repeat(4, 180px) !important;
+        justify-content: center;
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1025px) and (max-width: 1400px) {
     .interest-tags {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+        grid-template-columns: repeat(5, 180px) !important;
+        justify-content: center;
     }
 }
+
+/* 1400px以上は6列（デフォルト） */
 
 /* 好きな場所のCSSは削除済み */
 
