@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/project-fix.css">
     <link rel="stylesheet" href="assets/css/video-background.css">
     <link rel="stylesheet" href="assets/css/projects-parallax.css">
+    <link rel="stylesheet" href="assets/css/accessibility.css">
 
     <!-- SEO -->
     <meta property="og:title" content="AI駆動開発 - ポートフォリオ">
@@ -31,28 +32,30 @@
 </head>
 <body class="main-layout">
 
-    <header class="main-header">
+    <a href="#main-content" class="skip-to-content">コンテンツへスキップ</a>
+    
+    <header class="main-header" role="banner">
         <div class="container">
             <div class="logo">
-                <a href="index.html">MyPortfolio</a>
+                <a href="index.html" aria-label="ホームページへ戻る">MyPortfolio</a>
             </div>
-            <nav class="main-nav">
+            <nav class="main-nav" role="navigation" aria-label="メインナビゲーション">
                 <ul>
-                    <li><a href="#hero" class="active">ホーム</a></li>
+                    <li><a href="#hero" class="active" aria-current="page">ホーム</a></li>
                     <li><a href="#profile">プロフィール</a></li>
                     <li><a href="#projects">プロジェクト</a></li>
                     <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
             </nav>
-            <div class="lang-switch">
-                <a href="en/index.html">EN</a> | <span>JA</span>
+            <div class="lang-switch" role="group" aria-label="言語切り替え">
+                <a href="en/index.html" lang="en" aria-label="English version">EN</a> | <span aria-current="true">JA</span>
             </div>
         </div>
     </header>
 
-    <main class="main-content">
+    <main id="main-content" class="main-content" role="main">
         <!-- 独立したヒーローセクション -->
-        <section id="hero" class="hero-section profile-intro-bg">
+        <section id="hero" class="hero-section profile-intro-bg" role="banner" aria-labelledby="profile-name">
             <!-- 背景スライドショー -->
             <div class="background-slideshow">
                 <div class="slide active" data-bg="assets/images/backgrounds/1753104401527.jpg"></div>
@@ -73,7 +76,7 @@
                         </div>
                     </div>
                     <div class="profile-intro-text hero-animate-content">
-                        <h1 class="profile-name">東城 立憲</h1>
+                        <h1 id="profile-name" class="profile-name">東城 立憲</h1>
                         <p class="profile-title">AI駆動開発エンジニア</p>
                         <div class="profile-highlights">
                             <a href="articles/educational-psychology.html" class="highlight-item">
@@ -92,9 +95,9 @@
                         <div class="profile-personal-info hero-animate-tags">
                             <div class="personal-section">
                                 <h3>趣味・興味</h3>
-                                <div class="interest-tags">
-                                    <a href="articles/gaming.html" class="interest-tag has-article">🎮 ゲーム</a>
-                                    <a href="articles/road-bike.html" class="interest-tag has-article">🚴‍♂️ ロードバイク</a>
+                                <div class="interest-tags" role="list" aria-label="興味・趣味の一覧">
+                                    <a href="articles/gaming.html" class="interest-tag has-article" role="listitem" tabindex="0" aria-label="ゲームについて">🎮 ゲーム</a>
+                                    <a href="articles/road-bike.html" class="interest-tag has-article" role="listitem" tabindex="0" aria-label="ロードバイクについて">🚴‍♂️ ロードバイク</a>
                                     <a href="articles/wheelchair-softball.html" class="interest-tag has-article">♿ 車いすソフトボール</a>
                                     <a href="articles/special-olympics.html" class="interest-tag has-article">🏅 スペシャルオリンピックス</a>
                                     <a href="articles/fid-basketball.html" class="interest-tag has-article">🏀 FIDバスケットボール指導</a>
