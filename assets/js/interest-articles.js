@@ -11,6 +11,15 @@ if (document.readyState === 'loading') {
     initializeInterestArticles();
 }
 
+// 現在の言語を取得（グローバル関数）
+function getCurrentLanguage() {
+    const pathname = window.location.pathname;
+    console.log('Current pathname:', pathname);
+    const isEnglish = pathname.includes('/en/') || pathname.includes('/en');
+    console.log('Is English?', isEnglish);
+    return isEnglish ? 'en' : 'ja';
+}
+
 function initializeInterestArticles() {
     console.log('=== interest-articles 初期化開始 ===');
     // 記事が存在する趣味・興味のリスト（記事名のみ指定、パスは動的生成）
@@ -34,15 +43,6 @@ function initializeInterestArticles() {
             // 日本語版: / から articles/gaming.html  
             return `articles/${articleName}.html`;
         }
-    }
-
-    // 現在の言語を取得
-    function getCurrentLanguage() {
-        const pathname = window.location.pathname;
-        console.log('Current pathname:', pathname);
-        const isEnglish = pathname.includes('/en/') || pathname.includes('/en');
-        console.log('Is English?', isEnglish);
-        return isEnglish ? 'en' : 'ja';
     }
 
     // 興味タグを初期化
@@ -109,34 +109,7 @@ function initializeInterestArticles() {
         });
     }
 
-    // 記事ディレクトリの作成を提案する関数（デベロッパー向け）
-    function suggestArticleStructure() {
-        console.log(`
-📚 記事機能のディレクトリ構造提案:
-
-/articles/
-  ├── gaming.html              (ゲーム記事)
-  ├── road-bike.html           (ロードバイク記事) 
-  ├── wheelchair-softball.html (車いすソフトボール記事)
-  ├── fid-basketball.html      (FIDバスケットボール記事)
-  ├── reading.html             (読書記事)
-  └── template.html            (記事テンプレート)
-
-/en/articles/
-  ├── gaming.html              (English version)
-  ├── road-bike.html           (English version)
-  ├── wheelchair-softball.html (English version)
-  ├── fid-basketball.html      (English version)
-  ├── reading.html             (English version)
-  └── template.html            (English template)
-        `);
-    }
-
     // 初期化実行
     initializeInterestTags();
-    
-    // 開発者向けヒント出力
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        suggestArticleStructure();
-    }
 }
+
