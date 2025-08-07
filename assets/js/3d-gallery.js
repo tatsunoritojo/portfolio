@@ -163,9 +163,72 @@ function init3DGallery() {
     });
 }
 
+// 画像クリック時のモーダル表示機能
+function openImageModal(imageSrc, title, description) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    
+    modalImage.src = imageSrc;
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+    
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // スクロール無効化
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = ''; // スクロール復活
+    
+    // アニメーション完了後に非表示
+    setTimeout(() => {
+        if (!modal.classList.contains('show')) {
+            modal.style.display = 'none';
+        }
+    }, 300);
+}
+
+// ESCキーでモーダルを閉じる
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeImageModal();
+    }
+});
+
+// 画像クリック時のイベントリスナーを追加
+function addImageClickListeners() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            // 画像URLを取得
+            const backgroundImage = window.getComputedStyle(item).backgroundImage;
+            const imageUrl = backgroundImage.slice(5, -2); // url("...") から URL部分を抽出
+            
+            // どのギャラリーに属するかを判定
+            const galleryWrapper = item.closest('.gallery-wrapper');
+            const galleryId = galleryWrapper.id;
+            
+            // 現在表示されている画像のインデックスを取得
+            const currentIndex = currentIndexes[galleryId];
+            const content = galleryContentData[galleryId][currentIndex];
+            
+            // モーダルを開く
+            openImageModal(imageUrl, content.title, content.desc);
+        });
+    });
+}
+
 // DOM読み込み完了時に初期化
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init3DGallery);
+    document.addEventListener('DOMContentLoaded', function() {
+        init3DGallery();
+        addImageClickListeners();
+    });
 } else {
     init3DGallery();
+    addImageClickListeners();
 }
