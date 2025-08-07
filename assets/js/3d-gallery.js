@@ -198,27 +198,45 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// 画像クリック時のイベントリスナーを追加
+// 画像クリック時のイベントリスナーを追加（イベント委譲を使用）
 function addImageClickListeners() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    // 既存のイベントリスナーが重複しないようにチェック
+    if (document.body.hasAttribute('data-gallery-listeners')) {
+        return;
+    }
+    document.body.setAttribute('data-gallery-listeners', 'true');
     
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', function() {
-            // 画像URLを取得
-            const backgroundImage = window.getComputedStyle(item).backgroundImage;
-            const imageUrl = backgroundImage.slice(5, -2); // url("...") から URL部分を抽出
-            
-            // どのギャラリーに属するかを判定
-            const galleryWrapper = item.closest('.gallery-wrapper');
-            const galleryId = galleryWrapper.id;
-            
-            // 現在表示されている画像のインデックスを取得
-            const currentIndex = currentIndexes[galleryId];
-            const content = galleryContentData[galleryId][currentIndex];
-            
-            // モーダルを開く
+    // イベント委譲を使用してクリックを処理
+    document.addEventListener('click', function(e) {
+        const clickedItem = e.target.closest('.gallery-item');
+        if (!clickedItem) return;
+        
+        // どのギャラリーに属するかを判定
+        const galleryWrapper = clickedItem.closest('.gallery-wrapper');
+        if (!galleryWrapper) return;
+        
+        const galleryId = galleryWrapper.id;
+        
+        // クリックされた画像の実際のインデックスを取得
+        const allItemsInGallery = galleryWrapper.querySelectorAll('.gallery-item');
+        const clickedItemIndex = Array.from(allItemsInGallery).indexOf(clickedItem);
+        
+        // 画像URLを取得
+        const backgroundImage = window.getComputedStyle(clickedItem).backgroundImage;
+        let imageUrl = backgroundImage.slice(5, -2); // url("...") から URL部分を抽出
+        
+        // 引用符を除去
+        if (imageUrl.startsWith('"') && imageUrl.endsWith('"')) {
+            imageUrl = imageUrl.slice(1, -1);
+        }
+        
+        // 対応するコンテンツを取得
+        const content = galleryContentData[galleryId] && galleryContentData[galleryId][clickedItemIndex];
+        
+        // モーダルを開く
+        if (content && imageUrl && imageUrl !== 'none') {
             openImageModal(imageUrl, content.title, content.desc);
-        });
+        }
     });
 }
 
