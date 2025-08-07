@@ -8,7 +8,11 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(npx serve:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(del \"test-data.html\")",
+      "Bash(ren:*)",
+      "Bash(rm:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }
