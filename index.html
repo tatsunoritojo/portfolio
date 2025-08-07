@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="assets/css/accessibility.css">
     <link rel="stylesheet" href="assets/css/professional-hero.css">
     <link rel="stylesheet" href="assets/css/modern-typography.css">
+    <link rel="stylesheet" href="assets/css/3d-gallery.css">
 
     <!-- SEO -->
     <meta property="og:title" content="AI駆動開発 - ポートフォリオ">
@@ -284,8 +285,61 @@
         <section id="projects" class="projects-section">
             <div class="container">
                 <h2 class="section-header">プロジェクト</h2>
-                <div class="project-grid" id="projects-container">
-                    <!-- プロジェクトはJavaScriptで動的に読み込まれます -->
+                
+                <!-- QR出席管理システム -->
+                <div class="project-section">
+                    <div class="project-category">教育機関DX</div>
+                    <h3 class="project-title">QRコード出席管理システム</h3>
+                    
+                    <div class="gallery-container">
+                        <div class="gallery-wrapper" id="gallery1">
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/qr_attendance/overview_qr_attendance.png');"></div>
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/qr_attendance/registrate_students.png');"></div>
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/qr_attendance/Questionscreen_Q2_sleepsatisfaction.png');"></div>
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/qr_attendance/informations_attendance.png');"></div>
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/qr_attendance/generated_reports.png');"></div>
+                        </div>
+                        
+                        <div class="nav-buttons">
+                            <button class="nav-btn" onclick="slideGallery('gallery1', -1)">‹</button>
+                            <button class="nav-btn" onclick="slideGallery('gallery1', 1)">›</button>
+                        </div>
+                    </div>
+                    
+                    <div class="content-area">
+                        <h4 class="feature-title" id="title1">システム概要</h4>
+                        <p class="feature-description" id="desc1">
+                            Python/Kivyベースのデスクトップアプリを新規事業立ち上げのために開発。2バージョンあり、Excelベースでのローカル管理によりインターネット環境に依存しない安定運用を実現。また、Google Sheets APIを活用し、クラウドベースでの運用を行っています。このバージョンでは、GASを活用した入退室のメール通知機能の自動化も実装しました。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- シフトスケジューラー -->
+                <div class="project-section">
+                    <div class="project-category">業務効率化</div>
+                    <h3 class="project-title">Google Calendar連携シフト自動計算システム</h3>
+                    
+                    <div class="gallery-container">
+                        <div class="gallery-wrapper" id="gallery2">
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/shift_scheduler/mainscreen.png');"></div>
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/shift_scheduler/account_certification.png');"></div>
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/shift_scheduler/setting_form.png');"></div>
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/shift_scheduler/calendar_of_schedule.png');"></div>
+                            <div class="gallery-item" style="background-image: url('projects/portfolio_data/images/shift_scheduler/list_of_schedule.png');"></div>
+                        </div>
+                        
+                        <div class="nav-buttons">
+                            <button class="nav-btn" onclick="slideGallery('gallery2', -1)">‹</button>
+                            <button class="nav-btn" onclick="slideGallery('gallery2', 1)">›</button>
+                        </div>
+                    </div>
+                    
+                    <div class="content-area">
+                        <h4 class="feature-title" id="title2">アプリケーション メイン画面</h4>
+                        <p class="feature-description" id="desc2">
+                            Google Calendar連携シフト自動計算システムのメイン画面です。直感的なインターフェースでシフト管理の全機能にアクセスできます。
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -364,6 +418,7 @@
     </footer>
 
     <script src="assets/js/data.js"></script>
+    <script src="assets/js/3d-gallery.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/form-handler.js"></script>

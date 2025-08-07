@@ -1,0 +1,177 @@
+/* 3D横スライドギャラリー */
+.gallery-container {
+    position: relative;
+    height: 500px;
+    margin: 0 auto;
+    perspective: 1500px;
+    overflow: hidden;
+}
+
+.gallery-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background: var(--secondary-bg);
+    border: 3px solid var(--border-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 横配置とサイズ調整 */
+.gallery-item:nth-child(1) { 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+    opacity: 1;
+    z-index: 3;
+    border-color: var(--accent-secondary);
+    box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4);
+}
+
+.gallery-item:nth-child(2) { 
+    left: 85%;
+    top: 55%;
+    transform: translate(-50%, -50%) scale(0.7) rotateY(-15deg);
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.gallery-item:nth-child(3) { 
+    left: 115%;
+    top: 65%;
+    transform: translate(-50%, -50%) scale(0.5) rotateY(-25deg);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.gallery-item:nth-child(4) { 
+    left: 15%;
+    top: 55%;
+    transform: translate(-50%, -50%) scale(0.7) rotateY(15deg);
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.gallery-item:nth-child(5) { 
+    left: -15%;
+    top: 65%;
+    transform: translate(-50%, -50%) scale(0.5) rotateY(25deg);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+/* ホバー効果 */
+.gallery-item:hover {
+    transform: translate(-50%, -50%) scale(1.05) !important;
+}
+
+/* ナビゲーションボタン */
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.nav-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--secondary-bg);
+    border: 3px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    pointer-events: auto;
+    margin: 0 30px;
+}
+
+.nav-btn:hover {
+    background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
+    transform: scale(1.15);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.nav-btn:active {
+    transform: scale(0.95);
+}
+
+/* コンテンツエリア */
+.content-area {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.feature-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--accent-secondary);
+    font-weight: 700;
+}
+
+.feature-description {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* アニメーション効果 */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4); }
+    50% { box-shadow: 0 25px 60px rgba(59, 130, 246, 0.6); }
+}
+
+.gallery-item:nth-child(1) {
+    animation: glow 4s infinite;
+}
+
+/* レスポンシブ */
+@media (max-width: 1200px) {
+    .gallery-item { width: 500px; height: 330px; }
+    .gallery-container { height: 420px; }
+}
+
+@media (max-width: 768px) {
+    .gallery-item { width: 400px; height: 260px; font-size: 1rem; }
+    .gallery-container { height: 350px; }
+    .nav-btn { width: 60px; height: 60px; font-size: 1.5rem; margin: 0 20px; }
+    .feature-title { font-size: 1.8rem; }
+    .feature-description { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+    .gallery-item { width: 300px; height: 200px; font-size: 0.9rem; }
+    .gallery-container { height: 280px; }
+}

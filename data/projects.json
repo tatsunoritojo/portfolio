@@ -1,103 +1,108 @@
 [
   {
     "id": "project-01",
-    "title_ja": "新規塾立ち上げ社内システム構築",
-    "title_en": "New Cram School Internal System Development",
+    "title_ja": "QRコード出席管理システム",
+    "title_en": "QR Code Attendance Management System",
     "category_ja": "教育機関DX",
     "category_en": "Educational Institution DX",
-    "description_ja": "新規塾立ち上げに伴う包括的な管理システムを構築。GoogleFormsからの塾生データ収集、QRコード生成による塾生カード作成、デスクトップアプリケーションでの入退室管理自動化を実現。生徒の心理状態把握機能と月次レポート自動生成により、個別支援の質を向上させました。",
-    "description_en": "Built a comprehensive management system for a new cram school startup. Implemented automated attendance management using QR codes, student psychological state tracking through visual mood selection, and automated monthly reporting for parents. Streamlined operations from student registration to individual support.",
-    "tech_stack": ["Google Apps Script", "Google Forms", "Google Sheets", "QR Code API", "Desktop App", "Data Visualization"],
+    "description_ja": "Python/Kivyベースのデスクトップアプリを新規事業立ち上げのために開発。2バージョンあり、Excelベースでのローカル管理によりインターネット環境に依存しない安定運用を実現。また、Google Sheets APIを活用し、クラウドベースでの運用を行っています。このバージョンでは、GASを活用した入退室のメール通知機能の自動化も実装しました。",
+    "description_en": "Developed a Python/Kivy-based desktop application for a new business startup. Features two versions: Excel-based local management for stable operation without internet dependency, and cloud-based operation using Google Sheets API with automated email notification system via GAS.",
+    "tech_stack": ["Python", "Kivy", "Google Sheets API", "Google Apps Script", "Excel", "QR Code"],
     "period": "4ヶ月（要件定義1ヶ月 + 開発3ヶ月）",
     "scale": "約2800行",
     "outcome_ja": "入退室管理の完全自動化、生徒の心理状態可視化、保護者満足度95%向上を達成。",
     "outcome_en": "Achieved complete automation of attendance management, psychological state visualization, and 95% improvement in parent satisfaction.",
-    "image": "assets/images/projects/project-01.jpg",
+    "image": "projects/portfolio_data/images/qr_attendance/overview_qr_attendance.png",
     "github_url": "https://github.com/tatsunoritojo/attendance-management-system",
     "features": [
       {
-        "title_ja": "GoogleForms連携データ収集",
-        "title_en": "Google Forms Data Collection",
-        "description_ja": "塾生の基本情報を効率的に収集・管理",
-        "description_en": "Efficient collection and management of student basic information"
+        "title_ja": "システム概要",
+        "title_en": "System Overview",
+        "description_ja": "包括的な管理システムでQRコード統合による自動化された運用を実現",
+        "description_en": "Comprehensive management system with QR code integration for automated operations",
+        "image": "projects/portfolio_data/images/qr_attendance/overview_qr_attendance.png"
       },
       {
-        "title_ja": "QRコード自動生成・塾生カード作成",
-        "title_en": "QR Code Generation & Student Card Creation",
-        "description_ja": "個別QRコードによる塾生カードの自動作成システム",
-        "description_en": "Automated student card creation system with individual QR codes"
+        "title_ja": "生徒情報管理",
+        "title_en": "Student Information Management", 
+        "description_ja": "自動ID生成システムとデータベース管理による効率的な登録機能",
+        "description_en": "Efficient registration with automatic ID generation and database management",
+        "image": "projects/portfolio_data/images/qr_attendance/registrate_students.png"
       },
       {
-        "title_ja": "入退室管理自動化",
-        "title_en": "Automated Attendance Management",
-        "description_ja": "QRコードスキャンによる入退室の完全自動化",
-        "description_en": "Complete automation of entry/exit through QR code scanning"
-      },
-      {
-        "title_ja": "心理状態可視化システム",
+        "title_ja": "心理状態可視化",
         "title_en": "Psychological State Visualization",
-        "description_ja": "5択イメージ選択による生徒の気分・状態把握",
-        "description_en": "Student mood and condition tracking through 5-choice image selection"
+        "description_ja": "3つの質問システムによる気分・満足度・目的の把握で個別支援の質向上",
+        "description_en": "Three-question system for mood, satisfaction, and purpose tracking to improve individual support",
+        "image": "projects/portfolio_data/images/qr_attendance/Questionscreen_Q2_sleepsatisfaction.png"
+      },
+      {
+        "title_ja": "出席データ管理",
+        "title_en": "Attendance Data Management",
+        "description_ja": "リアルタイム更新とGoogle Sheets連携による統計分析機能",
+        "description_en": "Real-time updates and statistical analysis with Google Sheets integration",
+        "image": "projects/portfolio_data/images/qr_attendance/informations_attendance.png"
       },
       {
         "title_ja": "月次レポート自動生成",
         "title_en": "Automated Monthly Reporting",
-        "description_ja": "保護者向け月次レポートの自動作成・配信",
-        "description_en": "Automated creation and distribution of monthly reports for parents"
-      }
-    ],
-    "development_process": [
-      {
-        "phase_ja": "要件定義",
-        "phase_en": "Requirements",
-        "period": "4月",
-        "description_ja": "塾の運営フローと必要機能の詳細分析",
-        "description_en": "Detailed analysis of school operations and required functions"
-      },
-      {
-        "phase_ja": "設計・開発",
-        "phase_en": "Development",
-        "period": "5月-7月",
-        "description_ja": "システム実装と機能テスト",
-        "description_en": "System implementation and functionality testing"
-      },
-      {
-        "phase_ja": "運用開始",
-        "phase_en": "Launch",
-        "period": "8月",
-        "description_ja": "本格運用とフィードバック収集",
-        "description_en": "Full operation and feedback collection"
+        "description_ja": "保護者向け資料の自動生成機能でカスタマイズ対応",
+        "description_en": "Automated generation of customizable reports for parents",
+        "image": "projects/portfolio_data/images/qr_attendance/generated_reports.png"
       }
     ]
   },
   {
     "id": "project-02",
-    "title_ja": "学習プラットフォーム",
-    "title_en": "Python Study Platform",
-    "category_ja": "Eラーニング",
-    "category_en": "E-Learning",
-    "description_ja": "Flask + SQLAlchemy + Bootstrap 5を使用した学習管理システム。進捗管理、テスト機能を備え、効果的な学習をサポートします。",
-    "description_en": "A learning management system built with Flask, SQLAlchemy, and Bootstrap 5. Features progress tracking and testing functionality to support effective learning.",
-    "tech_stack": ["Python", "Flask", "SQLAlchemy", "Bootstrap 5", "HTML"],
-    "period": "3ヶ月",
-    "scale": "約2500行",
-    "outcome_ja": "受講完了率が30%向上。",
-    "outcome_en": "Increased course completion rate by 30%.",
-    "image": "assets/images/projects/project-02.jpg"
-  },
-  {
-    "id": "project-03",
-    "title_ja": "eBay輸出ビジネスダッシュボード",
-    "title_en": "eBay Export Business Dashboard",
-    "category_ja": "ビジネスツール",
-    "category_en": "Business Tools",
-    "description_ja": "React + TypeScriptで構築されたeBay輸出ビジネス支援ダッシュボード。在庫管理、価格分析、売上レポート機能を統合し、業務効率を大幅に向上させました。",
-    "description_en": "A business dashboard built with React and TypeScript for eBay export operations. Integrates inventory management, price analysis, and sales reporting to significantly improve operational efficiency.",
-    "tech_stack": ["React", "TypeScript", "JavaScript", "REST API"],
-    "period": "4ヶ月",
-    "scale": "約4600行",
-    "outcome_ja": "業務処理時間を50%削減、売上管理精度が向上。",
-    "outcome_en": "Reduced operational processing time by 50% and improved sales management accuracy.",
-    "image": "assets/images/projects/project-03.jpg"
+    "title_ja": "Google Calendar連携シフト自動計算システム",
+    "title_en": "Google Calendar Integrated Shift Scheduler",
+    "category_ja": "業務効率化",
+    "category_en": "Business Automation",
+    "description_ja": "FlaskベースのWebアプリケーションとして開発。Google Calendar APIとOAuth 2.0認証を実装しました。それによりデータアクセスのセキュリティを担保しました。SQLiteでデータ管理を行い、アプリ内で調整が可能です。視覚的にわかりやすいカレンダー表示と管理しやすいリスト表示を併用しました。",
+    "description_en": "Developed as a Flask-based web application with Google Calendar API and OAuth 2.0 authentication for secure data access. Features SQLite data management with in-app adjustments, combining visual calendar display and manageable list view.",
+    "tech_stack": ["Flask", "Google Calendar API", "OAuth 2.0", "SQLite", "JavaScript", "HTML/CSS"],
+    "period": "2ヶ月",
+    "scale": "約27,000行",
+    "outcome_ja": "シフト作成時間を80%削減、学生の勤務効率向上を実現。",
+    "outcome_en": "Reduced shift creation time by 80% and improved student work efficiency.",
+    "image": "projects/portfolio_data/images/shift_scheduler/mainscreen.png",
+    "github_url": "https://github.com/tatsunoritojo/shift-scheduler-app",
+    "features": [
+      {
+        "title_ja": "メインダッシュボード",
+        "title_en": "Main Dashboard",
+        "description_ja": "直感的なインターフェースでシフト管理の全機能にアクセス可能",
+        "description_en": "Intuitive interface providing access to all shift management features",
+        "image": "projects/portfolio_data/images/shift_scheduler/mainscreen.png"
+      },
+      {
+        "title_ja": "OAuth認証システム",
+        "title_en": "OAuth Authentication System",
+        "description_ja": "Googleアカウントとの安全な連携でカレンダーデータへの適切なアクセス管理",
+        "description_en": "Secure integration with Google accounts and proper access management for calendar data",
+        "image": "projects/portfolio_data/images/shift_scheduler/account_certification.png"
+      },
+      {
+        "title_ja": "詳細シフト設定",
+        "title_en": "Detailed Shift Configuration",
+        "description_ja": "営業時間、勤務時間、移動時間など様々な事業所に柔軟対応可能",
+        "description_en": "Flexible configuration for various business needs including operating hours, work hours, and travel time",
+        "image": "projects/portfolio_data/images/shift_scheduler/setting_form.png"
+      },
+      {
+        "title_ja": "カレンダー表示",
+        "title_en": "Calendar Display",
+        "description_ja": "視覚的なスケジュール表示で印刷対応レイアウトと直感的操作を実現",
+        "description_en": "Visual schedule display with print-friendly layout and intuitive operation",
+        "image": "projects/portfolio_data/images/shift_scheduler/calendar_of_schedule.png"
+      },
+      {
+        "title_ja": "スケジュール管理",
+        "title_en": "Schedule Management",
+        "description_ja": "Google Calendarデータを基にした統計情報付きシフト希望リスト表示",
+        "description_en": "Shift preference list display with statistical information based on Google Calendar data",
+        "image": "projects/portfolio_data/images/shift_scheduler/list_of_schedule.png"
+      }
+    ]
   }
 ]
