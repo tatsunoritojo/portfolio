@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/project-fix.css">
     <link rel="stylesheet" href="assets/css/video-background.css">
     <link rel="stylesheet" href="assets/css/projects-parallax.css">
+    <link rel="stylesheet" href="assets/css/professional-hero.css">
 
     <!-- SEO -->
     <meta property="og:title" content="AI駆動開発 - ポートフォリオ">
@@ -51,8 +52,8 @@
     </header>
 
     <main class="main-content">
-        <!-- 独立したヒーローセクション -->
-        <section id="hero" class="hero-section profile-intro-bg">
+        <!-- プロフェッショナルヒーローセクション -->
+        <section id="hero" class="hero-section professional-hero">
             <!-- 背景スライドショー -->
             <div class="background-slideshow">
                 <div class="slide active" data-bg="assets/images/backgrounds/1753104401527.jpg"></div>
@@ -61,60 +62,67 @@
                 <div class="slide" data-bg="assets/images/backgrounds/1753104737689.jpg"></div>
             </div>
             
+            <div class="hero-overlay"></div>
+            
+            <!-- 自然写真クレジット -->
+            <div class="nature-credit">📷 Background: Personal Photography Collection</div>
+            
             <div class="container">
-                <div class="profile-intro-content">
-                    <div class="profile-image-wrapper hero-animate-profile">
-                        <div class="profile-image-placeholder">
-                            <img src="assets/images/profile/profile-photo.jpg.jpg" alt="プロフィール写真" class="profile-photo">
+                <div class="hero-content">
+                    <div class="hero-main">
+                        <div class="hero-profile">
+                            <div class="profile-image-wrapper">
+                                <div class="profile-image-placeholder">
+                                    <img src="assets/images/profile/profile-photo.jpg.jpg" alt="プロフィール写真" class="profile-photo">
+                                </div>
+                                <div class="profile-status">
+                                    <span class="status-dot"></span>
+                                    <span class="status-text">Available for Projects</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="profile-status">
-                            <span class="status-dot"></span>
-                            <span class="status-text">フリーランス</span>
+                        
+                        <div class="hero-text">
+                            <div class="hero-intro">
+                                <h1 class="hero-name">東城 立憲</h1>
+                                <p class="hero-title">AI駆動開発エンジニア</p>
+                                <p class="hero-subtitle">フルスタック開発 × AI技術で圧倒的な開発速度を実現<br>
+                                <small>自然への情熱と、人への深い理解を技術に活かす</small></p>
+                            </div>
+                            
+                            <div class="hero-specialties">
+                                <div class="specialty-item">
+                                    <span class="specialty-icon">🎓</span>
+                                    <span class="specialty-text">教育心理学修士</span>
+                                </div>
+                                <div class="specialty-item">
+                                    <span class="specialty-icon">💻</span>
+                                    <span class="specialty-text">フルスタック開発</span>
+                                </div>
+                                <div class="specialty-item">
+                                    <span class="specialty-icon">🚀</span>
+                                    <span class="specialty-text">AI駆動開発</span>
+                                </div>
+                            </div>
+                            
+                            <div class="hero-cta">
+                                <a href="#contact" class="cta-primary">プロジェクトについて相談する</a>
+                                <a href="#profile" class="cta-secondary">詳しいプロフィールを見る</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="profile-intro-text hero-animate-content">
-                        <h1 class="profile-name">東城 立憲</h1>
-                        <p class="profile-title">AI駆動開発エンジニア</p>
-                        <div class="profile-highlights">
-                            <a href="articles/educational-psychology.html" class="highlight-item">
-                                <span class="highlight-icon">🎓</span>
-                                <span class="highlight-text">教育心理学修士</span>
-                            </a>
-                            <a href="articles/fullstack-development.html" class="highlight-item">
-                                <span class="highlight-icon">💻</span>
-                                <span class="highlight-text">フルスタック開発</span>
-                            </a>
-                            <a href="articles/rapid-prototyping.html" class="highlight-item">
-                                <span class="highlight-icon">🚀</span>
-                                <span class="highlight-text">AI駆動開発</span>
-                            </a>
+                    
+                    <div class="hero-interests">
+                        <h3 class="interests-title">専門外の活動・興味</h3>
+                        <div class="interest-tags-compact">
+                            <a href="articles/special-olympics.html" class="interest-tag">🏅 スペシャルオリンピックス</a>
+                            <a href="articles/fid-basketball.html" class="interest-tag">🏀 FIDバスケットボール指導</a>
+                            <a href="articles/wheelchair-softball.html" class="interest-tag">♿ 車いすソフトボール</a>
+                            <a href="articles/road-bike.html" class="interest-tag">🚴‍♂️ ロードバイク</a>
+                            <a href="articles/nature.html" class="interest-tag">🌄 自然</a>
+                            <a href="articles/reading.html" class="interest-tag">📚 読書</a>
                         </div>
-                        <div class="profile-personal-info hero-animate-tags">
-                            <div class="personal-section">
-                                <h3>趣味・興味</h3>
-                                <div class="interest-tags">
-                                    <a href="articles/gaming.html" class="interest-tag has-article">🎮 ゲーム</a>
-                                    <a href="articles/road-bike.html" class="interest-tag has-article">🚴‍♂️ ロードバイク</a>
-                                    <a href="articles/wheelchair-softball.html" class="interest-tag has-article">♿ 車いすソフトボール</a>
-                                    <a href="articles/special-olympics.html" class="interest-tag has-article">🏅 スペシャルオリンピックス</a>
-                                    <a href="articles/fid-basketball.html" class="interest-tag has-article">🏀 FIDバスケットボール指導</a>
-                                    <a href="articles/anime.html" class="interest-tag has-article">📺 アニメ</a>
-                                    <a href="articles/movies.html" class="interest-tag has-article">🎬 映画</a>
-                                    <a href="articles/golf.html" class="interest-tag has-article">⛳ ゴルフ</a>
-                                    <a href="articles/drive.html" class="interest-tag has-article">🚗 ドライブ</a>
-                                    <a href="articles/nature.html" class="interest-tag has-article">🌄 自然の景色を見ること</a>
-                                    <a href="articles/ramen.html" class="interest-tag has-article">🍜 ラーメンを食べること</a>
-                                    <a href="articles/reading.html" class="interest-tag has-article">📚 読書</a>
-                                </div>
-                            </div>
-                            <div class="personal-section">
-                                <h3>その他の情報</h3>
-                                <div class="additional-info">
-                                    <p class="info-text">特別支援教育の現場経験を活かした、誰にでも使いやすいシステム設計を心がけています。</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#contact" class="profile-cta-btn hero-animate-cta">お問い合わせはこちら</a>
+                        <p class="interests-note">広大な自然を撮影しながら培った美的センスと、特別支援教育の経験を活かし、<br>誰にでも美しく使いやすいシステム設計を心がけています</p>
                     </div>
                 </div>
             </div>

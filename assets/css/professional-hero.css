@@ -1,0 +1,505 @@
+/* プロフェッショナルヒーロースタイル */
+
+/* ヒーローセクション全体 */
+.hero-section.professional-hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--primary-bg);
+    overflow: hidden;
+    padding: calc(var(--spacing-unit) * 6) 0;
+}
+
+/* 背景オーバーレイ - 自然写真を活かすグラデーション */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 26, 0.4) 0%,
+        rgba(26, 26, 26, 0.2) 25%,
+        rgba(26, 26, 26, 0.1) 50%,
+        rgba(26, 26, 26, 0.3) 75%,
+        rgba(26, 26, 26, 0.6) 100%
+    );
+    z-index: 2;
+}
+
+/* 追加の自然写真エンハンスメント */
+.professional-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 60% 40%, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.1) 30%,
+        rgba(0, 0, 0, 0.4) 70%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* メインコンテンツエリア */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 4);
+}
+
+/* ヒーローメイン部分 */
+.hero-main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: calc(var(--spacing-unit) * 4);
+    align-items: center;
+}
+
+/* プロフィール画像部分 */
+.hero-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 1.5);
+}
+
+.professional-hero .profile-image-placeholder {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-primary);
+    background: rgba(45, 45, 45, 0.95);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(30, 58, 138, 0.3);
+    transition: all 0.3s ease;
+}
+
+.professional-hero .profile-image-placeholder:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(30, 58, 138, 0.4);
+}
+
+.professional-hero .profile-status {
+    background: rgba(45, 45, 45, 0.95);
+    border: 1px solid rgba(30, 58, 138, 0.3);
+    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.professional-hero .status-text {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* ヒーローテキスト部分 */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 2.5);
+    text-align: left;
+}
+
+/* ヒーロー導入部 */
+.hero-intro {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing-unit) * 1);
+}
+
+.hero-name {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-title {
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    color: var(--accent-primary);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.4;
+    max-width: 600px;
+}
+
+.hero-subtitle small {
+    display: block;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    margin-top: calc(var(--spacing-unit) * 0.5);
+    font-weight: 300;
+}
+
+/* 専門分野 */
+.hero-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing-unit) * 1.2);
+    margin: calc(var(--spacing-unit) * 0.5) 0;
+}
+
+.specialty-item {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 0.6);
+    background: rgba(45, 45, 45, 0.8);
+    padding: calc(var(--spacing-unit) * 0.7) calc(var(--spacing-unit) * 1.2);
+    border-radius: 25px;
+    border: 1px solid rgba(30, 58, 138, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.specialty-item:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.2);
+}
+
+.specialty-icon {
+    font-size: 1.1rem;
+}
+
+.specialty-text {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* CTA ボタン */
+.hero-cta {
+    display: flex;
+    gap: calc(var(--spacing-unit) * 1.5);
+    flex-wrap: wrap;
+    margin-top: calc(var(--spacing-unit) * 1);
+}
+
+.cta-primary,
+.cta-secondary {
+    padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2.5);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    text-align: center;
+}
+
+.cta-primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--hover-color));
+    color: white;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+}
+
+.cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(30, 58, 138, 0.4);
+    color: white;
+}
+
+.cta-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.cta-secondary:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+}
+
+/* 興味・活動セクション */
+.hero-interests {
+    background: rgba(45, 45, 45, 0.6);
+    padding: calc(var(--spacing-unit) * 2.5);
+    border-radius: 12px;
+    border: 1px solid rgba(30, 58, 138, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+.interests-title {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 calc(var(--spacing-unit) * 1.2) 0;
+    text-align: center;
+}
+
+.interest-tags-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing-unit) * 0.7);
+    justify-content: center;
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.interest-tags-compact .interest-tag {
+    background: rgba(30, 58, 138, 0.1);
+    color: var(--text-primary);
+    padding: calc(var(--spacing-unit) * 0.5) calc(var(--spacing-unit) * 1);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(30, 58, 138, 0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.interest-tags-compact .interest-tag:hover {
+    background: var(--accent-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.interests-note {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 1024px) {
+    .hero-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: calc(var(--spacing-unit) * 3);
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .professional-hero .profile-image-placeholder {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section.professional-hero {
+        padding: calc(var(--spacing-unit) * 4) 0;
+        min-height: 90vh;
+    }
+    
+    .hero-content {
+        gap: calc(var(--spacing-unit) * 3);
+    }
+    
+    .hero-main {
+        gap: calc(var(--spacing-unit) * 2.5);
+    }
+    
+    .professional-hero .profile-image-placeholder {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .hero-specialties {
+        justify-content: center;
+        gap: calc(var(--spacing-unit) * 0.8);
+    }
+    
+    .specialty-item {
+        padding: calc(var(--spacing-unit) * 0.6) calc(var(--spacing-unit) * 1);
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: calc(var(--spacing-unit) * 1);
+    }
+    
+    .cta-primary,
+    .cta-secondary {
+        min-width: 280px;
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section.professional-hero {
+        padding: calc(var(--spacing-unit) * 3) 0;
+    }
+    
+    .professional-hero .profile-image-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .hero-interests {
+        padding: calc(var(--spacing-unit) * 2);
+    }
+    
+    .interest-tags-compact {
+        gap: calc(var(--spacing-unit) * 0.5);
+    }
+    
+    .interest-tags-compact .interest-tag {
+        font-size: 0.8rem;
+        padding: calc(var(--spacing-unit) * 0.4) calc(var(--spacing-unit) * 0.8);
+    }
+}
+
+/* 背景スライドショーの自然写真エンハンスメント */
+.professional-hero .background-slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+}
+
+.professional-hero .background-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 3s ease-in-out, transform 0.1s ease-out;
+    /* 自然写真のコントラストと彩度を微調整 */
+    filter: contrast(1.1) saturate(1.15) brightness(0.9);
+}
+
+.professional-hero .background-slideshow .slide.active {
+    opacity: 0.8;
+}
+
+/* 微細なパララックス効果で奥行きを演出 */
+.professional-hero .background-slideshow .slide.active {
+    animation: naturalParallax 20s ease-in-out infinite;
+}
+
+@keyframes naturalParallax {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.02) translateY(-10px);
+    }
+}
+
+/* 自然写真クレジット表示エリア */
+.nature-credit {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.8);
+    padding: calc(var(--spacing-unit) * 0.4) calc(var(--spacing-unit) * 0.8);
+    border-radius: 15px;
+    font-size: 0.75rem;
+    backdrop-filter: blur(10px);
+    z-index: 15;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+.nature-credit:hover {
+    opacity: 1;
+    color: white;
+}
+
+/* アクセシビリティ改善 */
+@media (prefers-reduced-motion: reduce) {
+    .professional-hero .profile-image-placeholder,
+    .specialty-item,
+    .cta-primary,
+    .cta-secondary,
+    .interest-tags-compact .interest-tag {
+        transition: none;
+    }
+    
+    .professional-hero .profile-image-placeholder:hover,
+    .specialty-item:hover,
+    .cta-primary:hover,
+    .cta-secondary:hover,
+    .interest-tags-compact .interest-tag:hover {
+        transform: none;
+    }
+    
+    .professional-hero .background-slideshow .slide.active {
+        animation: none;
+    }
+}
+
+/* モバイルでの自然写真最適化 */
+@media (max-width: 768px) {
+    .nature-credit {
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.7rem;
+        padding: calc(var(--spacing-unit) * 0.3) calc(var(--spacing-unit) * 0.6);
+    }
+    
+    .professional-hero .background-slideshow .slide {
+        /* モバイルでは画像を中央に固定して動きを抑制 */
+        background-attachment: scroll;
+        background-position: center 30%;
+    }
+}
+
+/* ハイコントラストモード対応 */
+@media (prefers-contrast: high) {
+    .professional-hero .profile-image-placeholder {
+        border-width: 4px;
+    }
+    
+    .specialty-item,
+    .professional-hero .profile-status,
+    .hero-interests {
+        border-width: 2px;
+    }
+    
+    .cta-secondary {
+        border-width: 3px;
+    }
+}
