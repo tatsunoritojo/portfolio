@@ -192,10 +192,10 @@
 }
 
 .image-modal.show {
-    display: flex;
     opacity: 1;
     align-items: center;
     justify-content: center;
+    display: flex;
 }
 
 .modal-overlay {
