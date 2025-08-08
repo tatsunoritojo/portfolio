@@ -174,7 +174,11 @@ function openImageModal(imageSrc, title, description) {
     modalTitle.textContent = title;
     modalDescription.textContent = description;
     
-    modal.classList.add('show');
+    // 表示状態をリセット
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10);
     document.body.style.overflow = 'hidden'; // スクロール無効化
 }
 
